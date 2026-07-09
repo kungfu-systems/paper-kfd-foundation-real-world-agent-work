@@ -44,6 +44,11 @@ See [`docs/repository-naming.md`](docs/repository-naming.md).
 
 ## Build
 
+CI builds the PDF through Buildchain's pinned LaTeX Docker toolchain declared
+in [`.buildchain/buildchain.toml`](.buildchain/buildchain.toml). The workflow
+also writes the publication manifest, passport, archive registry, and source
+bundle as Buildchain artifacts.
+
 If a TeX toolchain is installed:
 
 ```sh

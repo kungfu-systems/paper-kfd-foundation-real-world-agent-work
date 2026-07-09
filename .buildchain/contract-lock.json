@@ -1,0 +1,21 @@
+{
+  "contract": "kungfu-buildchain-contract-lock",
+  "schemaVersion": 1,
+  "policy": "major-compatible",
+  "buildchain": {
+    "ref": "v2",
+    "resolvedSha": "1ddb0408433cba98f668410776d8b4bb65eb2452",
+    "runtimeClass": "stable"
+  },
+  "accepted": {
+    "contractDigest": "sha256:3492a69ad5e95953d78aa3f4418b205c551e75430afcf5f00f8d5da356bc5207",
+    "compatibilityDigest": "sha256:967df7e854fdf582294ddfb6403eff25c00db9518a24051e7d47cbd75527c785",
+    "majorLine": "v2",
+    "acceptedAt": "2026-07-09T00:00:00.000Z",
+    "acceptedBy": "consumer"
+  },
+  "source": {
+    "path": "node_modules/@kungfu-tech/buildchain/dist/site/buildchain-contract.json",
+    "generatedBy": "buildchain-contract-lock"
+  }
+}

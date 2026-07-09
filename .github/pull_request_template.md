@@ -3,7 +3,8 @@
 ## Checks
 
 - [ ] `make check`
-- [ ] `make pdf` if a TeX toolchain is available
+- [ ] Buildchain `Build` workflow passes
+- [ ] Buildchain `Verify` workflow passes
 
 ## Governance
 
