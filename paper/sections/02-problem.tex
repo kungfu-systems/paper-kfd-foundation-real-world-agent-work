@@ -1,0 +1,66 @@
+\section{Problem: Real-World Agent Work}
+\label{sec:problem}
+
+\subsection{From output generation to work participation}
+
+We use \emph{real-world agent work} to mean work where agents help humans
+manage concrete tasks in a persistent environment. Such work can involve:
+
+\begin{itemize}[leftmargin=*]
+  \item local and remote files;
+  \item source repositories and pull requests;
+  \item terminals, background sessions, and build logs;
+  \item model calls, tool calls, traces, and runtime events;
+  \item package releases, checksums, signatures, and deployment evidence;
+  \item user approvals, refusals, handoffs, and review decisions; and
+  \item GUI, CLI, API, documentation, and agent-facing metadata surfaces.
+\end{itemize}
+
+The central risk is not simply that an agent might make a mistake. The deeper
+risk is that the work environment becomes too complex for either the human or
+the agent to reconstruct. When facts drift, trust moves to habit or authority.
+When trust is not inspectable, control actions become guesses. When products
+obtain compliance through hidden pressure, participants may appear to
+cooperate while losing the ability to understand, challenge, or recover the
+work.
+
+\subsection{Three recurring failures}
+
+\paragraph{Fact drift.}
+A product often has several versions of the same important fact: source
+configuration, packaged configuration, UI defaults, CLI behavior, release
+metadata, documentation, schema files, and runtime behavior. In low-complexity
+systems, small mismatches may be tolerable. In agent work, the mismatch becomes
+amplified: an agent may read one surface, a human may inspect another, and the
+runtime may enforce a third.
+
+\paragraph{Opaque trust.}
+Many systems ask users to trust claims without exposing enough supporting
+facts. A release is described as safe, a trace is summarized as complete, a
+plugin is marked trusted, a deployment is called successful, or an agent run is
+said to be recoverable. Without source facts, evidence, residual-risk state,
+and responsibility boundaries, those claims rely on maintainer reputation or
+interface authority rather than inspectable truth.
+
+\paragraph{Coerced cooperation.}
+Agent-era products can easily become coercive. A product may force a managed
+workflow, hide prompts or constraints, capture work state in a private cloud
+surface, make alternative paths difficult, or present defaults that look like
+choices but cannot be inspected. This may increase short-term adoption but
+weakens cooperation. Capable participants need to understand value before they
+can trust it, and understand constraints before they can cooperate with them.
+
+\subsection{Why this is not only a software problem}
+
+The problem is not limited to software correctness. It is a practical
+philosophy of survival in complex systems. Humans have often survived by using
+low-cost substitutes for facts: authority, habit, reputation, intuition, or
+local memory. Those substitutes can work in stable environments. Agent work
+expands the radius of action and memory, making the world more complex while
+also providing more intelligence for managing that complexity. The design
+question becomes whether that new intelligence is used to build stronger fact
+worlds, or whether it merely accelerates opaque complexity.
+
+This paper takes the first path. It treats humans and agents as intelligent
+participants that need a shared fact world, inspectable trust, and transparent
+value to cooperate in reality.

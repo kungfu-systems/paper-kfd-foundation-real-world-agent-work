@@ -1,0 +1,60 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{microtype}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{amsmath}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=black,
+  citecolor=black,
+  urlcolor=black
+}
+
+\title{Non-Drifting Facts, Inspectable Trust, and Trusted Value:\\
+A Foundation Model for Real-World Agent Work}
+\author{Keren Dong\\Kungfu Origin Technology Limited\\\href{mailto:keren.dong@kungfu.link}{keren.dong@kungfu.link}}
+\date{Draft: July 2026}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Agents are beginning to participate in long-lived work that touches local
+files, repositories, terminals, releases, user decisions, remote machines,
+traces, and product control surfaces. This changes the design problem from
+``how should software expose an interface to an agent?'' to ``how can humans
+and agents cooperate in real work without losing facts, trust, or
+responsibility?'' This paper proposes a compact foundation model for that
+problem: facts must not drift; trust must start from facts; cooperation must
+start from trusted value. The model is derived from the first three Kung Fu
+Decisions (KFD-1/2/3), but is presented here as a general design position for
+real-world agent work. We define the three layers, explain why their order is
+load-bearing, describe engineering surfaces that can make the model
+operational, and outline how the KFD package, Buildchain, and Kungfu can serve
+as evidence paths. The paper is an initial foundation and systems design draft:
+it argues that agent-era products need non-drifting fact sources, inspectable
+trust assessments, and transparent value surfaces before they can support
+durable cooperation between intelligent participants.
+\end{abstract}
+
+\input{sections/01-introduction}
+\input{sections/02-problem}
+\input{sections/03-foundation-model}
+\input{sections/04-operationalization}
+\input{sections/05-evidence-paths}
+\input{sections/06-evaluation}
+\input{sections/07-related-work}
+\input{sections/08-discussion}
+\input{sections/09-conclusion}
+
+\bibliographystyle{plain}
+\bibliography{references}
+
+\end{document}

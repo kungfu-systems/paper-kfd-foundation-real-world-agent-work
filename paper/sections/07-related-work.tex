@@ -1,0 +1,46 @@
+\section{Related Work}
+\label{sec:related}
+
+\subsection{Human augmentation}
+
+Engelbart framed computing as augmenting human intellect rather than merely
+automating tasks \cite{engelbart1962augmenting}. This paper extends that
+augmentation stance to real-world work with agents. The product should not
+only automate actions; it should make the shared work environment more
+legible for human and agent participants.
+
+\subsection{Situated action and coordination}
+
+Suchman's work on situated action argues that plans and situated practice have
+a complex relationship \cite{suchman1987plans}. Winograd and Flores emphasize
+language, commitments, and coordination in work \cite{winograd1986understanding}.
+The KFD foundation shares the view that work is not reducible to static
+instructions. It differs by focusing on the engineering of fact sources,
+trust, and collaboration surfaces for agent-era products.
+
+\subsection{Distributed systems and event evidence}
+
+Lamport's work on time and ordering shows that physical time is not enough for
+causal reasoning in distributed systems \cite{lamport1978time}. Event sourcing
+treats current state as derived from recorded events \cite{fowler2005eventsourcing}.
+Distributed tracing records runtime relationships across components
+\cite{opentelemetry}. These mechanisms provide important evidence, but the KFD
+foundation addresses a broader product trust question: how facts become
+non-drifting, how claims become inspectable, and how participants cooperate
+through trusted value.
+
+\subsection{Software supply chain and provenance}
+
+Software supply-chain mechanisms such as provenance attestations and
+reproducible builds aim to make artifacts more trustworthy \cite{slsa}.
+KFD-2 is compatible with this direction but generalizes beyond release
+artifacts. The same trust assessment structure can apply to configs, schemas,
+collaboration interfaces, timeline views, runtime facts, and agent control
+surfaces.
+
+\subsection{Agent tooling}
+
+Current agent tooling often emphasizes tracing, evaluation, prompt
+management, or workflow execution. These are valuable subsystems. The KFD
+foundation argues for a higher layer: real-world agent work needs a shared
+fact and trust model before tracing or control can become durable cooperation.

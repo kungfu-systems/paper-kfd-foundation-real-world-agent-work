@@ -1,0 +1,57 @@
+\section{Evaluation Plan}
+\label{sec:evaluation}
+
+The foundation model can be evaluated through product and process evidence.
+
+\subsection{Research questions}
+
+\begin{itemize}[leftmargin=*]
+  \item Does a welded-surface register reduce unclassified or accidental
+        contract drift?
+  \item Can agents reconstruct trust claims from package metadata, schemas,
+        release passports, and local facts without private maintainer context?
+  \item Do collaboration interfaces reduce onboarding friction for both humans
+        and agents?
+  \item Do transparent constraints produce fewer recovery failures than hidden
+        workflow capture?
+  \item Can a human or agent reproduce a control decision from exported facts,
+        evidence, residual risk, and responsibility state?
+\end{itemize}
+
+\subsection{Case studies}
+
+\begin{itemize}[leftmargin=*]
+  \item \textbf{KFD package release.} Verify that KFD decision texts,
+        standards metadata, schemas, site bundle, and package output stay bound
+        to one fact source.
+  \item \textbf{Buildchain release passport.} Evaluate whether a release
+        passport exposes enough facts for an agent to understand artifact
+        trust and residual risk.
+  \item \textbf{Kungfu agent onboarding.} Test whether an agent can discover
+        Kungfu capabilities, constraints, and value without a private prompt.
+  \item \textbf{Runtime fact ledger recovery.} Interrupt a long-running agent
+        task and measure whether a human or agent can recover from recorded
+        facts and responsibility state.
+\end{itemize}
+
+\subsection{Measures}
+
+Potential measures include:
+
+\begin{itemize}[leftmargin=*]
+  \item number of drift defects found before and after register adoption;
+  \item time to reconstruct a release or task decision from artifacts;
+  \item fraction of trust claims that are machine-checkable, warning, fail, or
+        unverifiable;
+  \item number of private-context assumptions needed for agent onboarding;
+  \item recovery time after task interruption; and
+  \item rate of constraints that can be traced to explicit facts or policies.
+\end{itemize}
+
+\subsection{Artifacts}
+
+Evaluation artifacts should include public-safe fixtures, release passports,
+contract-world witnesses, trust claims, trust assessments, collaboration
+interface witnesses, exported ledgers, and sanitized recovery scenarios. The
+paper should not depend on private operational logs unless they are sanitized,
+permissioned, and clearly marked as such.

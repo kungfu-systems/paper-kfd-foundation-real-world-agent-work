@@ -1,0 +1,67 @@
+\section{Introduction}
+
+Software is entering a stage where agents are not only producing isolated text
+or code snippets. They are increasingly participating in real work: editing
+files, operating terminals, reading logs, opening pull requests, writing
+release evidence, using product APIs, coordinating with humans, and resuming
+tasks across time. This work is not purely conversational and not purely
+automated. It is situated in a shared world of artifacts, constraints,
+decisions, responsibility, and history.
+
+The common framing is to ask how software systems should become
+\emph{agent-facing}. That framing is useful but too narrow. It still treats
+the agent primarily as a tool user at the edge of a software interface. In
+real-world agent work, the agent is often a reasoning participant: it observes,
+infers, explains, recovers, delegates, refuses unsafe actions, and helps humans
+interpret complex state. The product problem is therefore not only interface
+design. It is world design: what kind of fact world do humans and agents share,
+how can claims in that world be trusted, and how can cooperation happen without
+hidden pressure or opaque control?
+
+This paper proposes a three-layer foundation model:
+
+\begin{quote}
+KFD-1: facts must not drift.\\
+KFD-2: trust must start from facts.\\
+KFD-3: cooperation must start from trusted value.
+\end{quote}
+
+Together these layers define a practical chain:
+
+\begin{quote}
+non-drifting facts $\rightarrow$ inspectable trust $\rightarrow$ trusted value
+$\rightarrow$ voluntary cooperation $\rightarrow$ reviewable record.
+\end{quote}
+
+The model is intentionally compact. It does not claim that every system must
+become a journal, that every fact can be captured perfectly, or that agents
+have a metaphysical status that products must accept. It makes a narrower and
+more testable claim: systems that ask humans and agents to rely on real work
+should make important facts non-drifting, bind trust claims to inspectable
+evidence and responsibility state, and expose value and constraints clearly
+enough that cooperation is not obtained through pressure, manipulation, or
+hidden workflow capture.
+
+The contribution of this draft is:
+
+\begin{itemize}[leftmargin=*]
+  \item a problem statement for real-world agent work as a shared fact, trust,
+        and cooperation problem;
+  \item a three-layer foundation model based on non-drifting facts,
+        inspectable trust, and trusted value;
+  \item an operational mapping from the model to contract worlds, trust
+        assessments, collaboration interfaces, release passports, and local
+        fact ledgers;
+  \item an evidence path using the KFD package, Buildchain, and Kungfu as
+        concrete implementation cases; and
+  \item an evaluation plan for turning the model from a design position into
+        product and systems evidence.
+\end{itemize}
+
+The rest of the paper is organized as follows. Section~\ref{sec:problem}
+defines real-world agent work and the failure modes that motivate the model.
+Section~\ref{sec:foundation} presents the three-layer model.
+Section~\ref{sec:operationalization} describes engineering surfaces.
+Section~\ref{sec:evidence} outlines evidence paths. Section~\ref{sec:evaluation}
+gives an evaluation plan. Section~\ref{sec:related} situates the model against
+related work.

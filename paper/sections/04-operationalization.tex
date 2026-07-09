@@ -1,0 +1,79 @@
+\section{Operationalizing the Model}
+\label{sec:operationalization}
+
+The model becomes useful only if it can be expressed in engineering surfaces.
+This section sketches the main surfaces.
+
+\subsection{Welded-surface registers}
+
+KFD-1 requires products to identify surfaces that consumers weld to. A welded
+surface is one that either binds consumers at integration time, or produces
+outputs that remain depended on after a run. Examples include schemas, ABIs,
+configuration contracts, CLI commands, release channel ontology, audit
+records, and runtime fact ledgers.
+
+A welded-surface register is the product's map of such surfaces. Changes are
+classified against the register as breaking, additive, no registered-surface
+impact, or unclassifiable. The last class is important: when a change cannot
+be classified, the correct response is not to guess but to fix the register.
+
+\subsection{Trust claims and assessments}
+
+KFD-2 can be operationalized through trust claims and trust assessments. A
+claim describes what the product wants a participant to rely on. The assessment
+binds the claim to facts, evidence, machine checks, residual risk, and
+responsibility boundaries.
+
+Release passports are one projection of this pattern. A release passport can
+state source commit, artifact hashes, build workflow, schema versions, checks,
+unverified claims, degraded evidence, and responsible maintainers. The same
+pattern can apply to configuration contracts, timeline views, collaboration
+interfaces, and product control surfaces.
+
+\subsection{Collaboration interfaces}
+
+KFD-3 can be operationalized through collaboration interfaces. A collaboration
+interface is not merely an API list. It should expose:
+
+\begin{itemize}[leftmargin=*]
+  \item what the product can do;
+  \item why that capability is valuable;
+  \item which facts make the value claim inspectable;
+  \item what modes are available;
+  \item what constraints apply;
+  \item how constraints can be reviewed or escalated; and
+  \item where cooperation leaves records.
+\end{itemize}
+
+For agents, this means a product should provide stable local discovery
+surfaces: command metadata, schemas, examples, envelopes, package manifests,
+or onboarding documents. The point is not to make agents obey the product. The
+point is to let them discover the product's value and limits through facts.
+
+\subsection{Local fact ledgers}
+
+Real-world agent work benefits from local fact ledgers. A ledger can record
+observed work, provenance, hashes, runs, decisions, trace spans, release facts,
+human approvals, and imported remote evidence. The ledger does not need to be
+perfect or universal. It should preserve enough facts for recovery, audit,
+export, and cooperation.
+
+This is where the model becomes more than documentation. A product that keeps
+facts local and inspectable can let humans and agents ask:
+
+\begin{quote}
+What happened? Which facts support that? What remains uncertain? Who owns the
+next decision? What action is safe now?
+\end{quote}
+
+\subsection{Dual-first surfaces}
+
+The model implies dual-first design. Human GUI surfaces and agent CLI/API
+surfaces should not diverge into different truth worlds. A human may prefer a
+dashboard, while an agent may prefer JSON, schema, or command output. The
+product should let both inspect the same facts, claims, constraints, and
+records.
+
+This is a stronger requirement than adding an API after the GUI. The API,
+CLI, documentation, envelope, and local package metadata are first-class
+interfaces for intelligent participants.
