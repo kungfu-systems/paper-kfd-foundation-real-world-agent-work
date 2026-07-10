@@ -58,7 +58,7 @@
     "promotionChannelTreeSha": "",
     "publishToolingSha": "a958042d4e1a701684e1457e7fd020c02f7b7919",
     "releaseStateRef": "refs/heads/buildchain/release-state/0-1-0-alpha-3",
-    "releaseStateSha": "",
+    "releaseStateSha": "c1a669cdc271b6e834b084f23cabb7425b71db6a",
     "package": {
       "name": "@kungfu-tech/paper-kfd-foundation-real-world-agent-work",
       "version": "0.1.0-alpha.3"
