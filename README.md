@@ -68,6 +68,8 @@ If a TeX toolchain is installed:
 make pdf
 ```
 
+The public PDF artifact is written to `_build/kfd-foundation-model.pdf`.
+
 Source-only checks:
 
 ```sh
