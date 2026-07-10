@@ -10,8 +10,8 @@ title = "Non-Drifting Facts, Inspectable Trust, and Trusted Value: A Foundation 
 version = "0.1.0-alpha.2"
 abstract = "A foundation and systems design paper for KFD-1/2/3 as a model for real-world agent work."
 authors = [ "Keren Dong" ]
-primary_artifact = "_build/non-drifting-facts-inspectable-trust-and-trusted-value-a-foundation-model-for-real-world-agent-work.pdf"
-artifact_paths = [ "_build/non-drifting-facts-inspectable-trust-and-trusted-value-a-foundation-model-for-real-world-agent-work.pdf" ]
+primary_artifact = "_build/kfd-foundation-model.pdf"
+artifact_paths = [ "_build/kfd-foundation-model.pdf" ]
 metadata_paths = [ "README.md", "docs/MAP.md" ]
 source_paths = [ "paper", "README.md", "LICENSE", "Makefile" ]
 site_consumers = [ "papers.libkungfu.dev" ]
@@ -30,7 +30,7 @@ registry_path = ".buildchain/publication/publication-registry.json"
 type = "latex-docker"
 image = "ghcr.io/kungfu-systems/build-images/latex-pdf-builder"
 digest = "sha256:c20f3809e96836c1c78e97c76939d12f1de3fed0ea9b7c40c43332ec2ea480f8"
-command = "mkdir -p _build && cd paper && latexmk -pdf -outdir=../_build main.tex && mv ../_build/main.pdf ../_build/non-drifting-facts-inspectable-trust-and-trusted-value-a-foundation-model-for-real-world-agent-work.pdf"
+command = "mkdir -p _build && cd paper && latexmk -pdf -outdir=../_build main.tex && mv ../_build/main.pdf ../_build/kfd-foundation-model.pdf"
 
 [publish]
 kind = "npm-paper-package"
