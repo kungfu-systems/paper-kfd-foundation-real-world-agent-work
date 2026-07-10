@@ -10,7 +10,7 @@ on:
       buildchain-ref:
         description: "Temporary Buildchain runtime ref for trusted manual validation"
         required: false
-        default: ""
+        default: "v2-alpha"
 
 jobs:
   paper-release:
@@ -20,7 +20,7 @@ jobs:
       id-token: write
       issues: write
     with:
-      buildchain-ref: ${{ inputs.buildchain-ref || '' }}
+      buildchain-ref: ${{ inputs.buildchain-ref || 'v2-alpha' }}
       buildchain-contract-lock-path: .buildchain/contract-lock.json
       toolchain-type: config
       verify-command: make check

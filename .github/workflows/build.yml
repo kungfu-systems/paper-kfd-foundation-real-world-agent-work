@@ -6,7 +6,7 @@ on:
       buildchain-ref:
         description: "Temporary Buildchain runtime ref for trusted manual validation"
         required: false
-        default: ""
+        default: "v2-alpha"
   pull_request:
   push:
     branches:
@@ -20,7 +20,7 @@ jobs:
   publication:
     uses: kungfu-systems/buildchain/.github/workflows/publication-artifact.yml@v2-alpha
     with:
-      buildchain-ref: ${{ inputs.buildchain-ref || '' }}
+      buildchain-ref: ${{ inputs.buildchain-ref || 'v2-alpha' }}
       buildchain-contract-lock-path: .buildchain/contract-lock.json
       toolchain-type: config
       verify-command: make check
