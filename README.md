@@ -68,6 +68,9 @@ If a TeX toolchain is installed:
 make pdf
 ```
 
+The public PDF artifact is written to
+`_build/non-drifting-facts-inspectable-trust-and-trusted-value-a-foundation-model-for-real-world-agent-work.pdf`.
+
 Source-only checks:
 
 ```sh
