@@ -32,6 +32,11 @@ image = "ghcr.io/kungfu-systems/build-images/latex-pdf-builder"
 digest = "sha256:c20f3809e96836c1c78e97c76939d12f1de3fed0ea9b7c40c43332ec2ea480f8"
 command = "mkdir -p _build && cd paper && latexmk -pdf -outdir=../_build main.tex"
 
+[publish]
+kind = "npm-paper-package"
+package = "@kungfu-tech/paper-kfd-foundation-real-world-agent-work"
+auth = "trusted-publishing"
+
 [version]
 required = true
 
