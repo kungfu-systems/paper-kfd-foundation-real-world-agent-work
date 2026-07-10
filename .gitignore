@@ -12,7 +12,9 @@
 *.toc
 _build/
 .buildchain/publication/
+.buildchain/publication-result.json
 .buildchain/paper-release/
+.buildchain/contract-drift/
 .buildchain/release-candidate/
 .buildchain/release-evidence/
 .buildchain/release-passport/
