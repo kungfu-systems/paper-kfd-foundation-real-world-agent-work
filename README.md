@@ -44,6 +44,24 @@ See [`docs/repository-naming.md`](docs/repository-naming.md).
 
 ## Build
 
+CI builds the PDF through Buildchain's pinned LaTeX Docker toolchain declared
+in [`.buildchain/buildchain.toml`](.buildchain/buildchain.toml). Buildchain also
+writes the publication manifest, passport, archive registry, and source bundle.
+On alpha and release channels, the dedicated paper release preset synthesizes
+and publishes the npm package, records release evidence, and creates the GitHub
+Release.
+
+The package coordinate is:
+
+```text
+@kungfu-tech/paper-kfd-foundation-real-world-agent-work
+```
+
+npm Trusted Publishing must be configured against this repository and
+`.github/workflows/paper-release.yml`. The repository does not carry local
+package-generation or publication transaction scripts; those mechanics remain
+owned by Buildchain.
+
 If a TeX toolchain is installed:
 
 ```sh

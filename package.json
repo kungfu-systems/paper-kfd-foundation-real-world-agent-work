@@ -1,0 +1,10 @@
+{
+  "name": "@kungfu-tech/paper-kfd-foundation-real-world-agent-work",
+  "private": true,
+  "description": "Source repository for the KFD foundation paper on real-world agent work",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kungfu-systems/paper-kfd-foundation-real-world-agent-work.git"
+  }
+}
