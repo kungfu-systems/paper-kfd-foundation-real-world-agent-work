@@ -1,0 +1,408 @@
+{
+  "schemaVersion": 1,
+  "contract": "kungfu-buildchain-release-passport",
+  "generatedAt": "2026-07-10T05:04:25.243Z",
+  "surfaceTimestampPolicy": {
+    "generatedAt": "2026-07-10T05:04:25.243Z",
+    "publishedAt": "2026-07-10T05:04:25.243Z",
+    "reproducible": true,
+    "timestampPolicy": "ci-injected",
+    "deterministicInputs": [
+      "release.sourceSha",
+      "release.releaseSha",
+      "release.releaseMaterialSha",
+      "artifact-evidence.json",
+      "publish evidence",
+      "release-state transaction",
+      "sourceRevision",
+      "sourceDateEpoch",
+      "package content",
+      "declared Buildchain surface manifest contract"
+    ],
+    "sourceDateEpoch": "0",
+    "sourceRevision": "b3e897d2381ea5fc5ca4263305f9f6d6cac81139",
+    "timestampPolicyDetails": {
+      "contract": "kungfu-buildchain-surface-timestamp-policy",
+      "timestampFields": [
+        "generatedAt",
+        "publishedAt",
+        "surfaceTimestampPolicy.generatedAt",
+        "surfaceTimestampPolicy.publishedAt"
+      ],
+      "timestampFieldsParticipateInArtifactDigest": true,
+      "artifactDigestScope": "release passport JSON and release evidence bundle",
+      "note": "Human-readable timestamps are separate from reproducibility inputs; do not infer reproducibility from epoch timestamps."
+    }
+  },
+  "product": {
+    "name": "KFD Foundation for Real-World Agent Work",
+    "repository": "kungfu-systems/paper-kfd-foundation-real-world-agent-work",
+    "mechanism": "product-mechanism.json"
+  },
+  "release": {
+    "tag": "v0.1.0-alpha.2",
+    "publicTag": "v0.1.0-alpha.2",
+    "internalTag": "v0.1.0-alpha.2",
+    "internalVersion": "0.1.0-alpha.2",
+    "publishedVersion": "0.1.0-alpha.2",
+    "versionLabel": "0.1.0-alpha.2",
+    "line": "v0.1",
+    "sourceSha": "b3e897d2381ea5fc5ca4263305f9f6d6cac81139",
+    "channel": "alpha",
+    "targetRef": "alpha/v0/v0.1",
+    "releaseSha": "20d3c17b13b6187dc0b00e5033798a71cb9fee74",
+    "releaseMaterialSha": "20d3c17b13b6187dc0b00e5033798a71cb9fee74",
+    "builtSourceSha": "",
+    "builtSourceTreeSha": "",
+    "promotionChannelSha": "",
+    "promotionChannelTreeSha": "",
+    "publishToolingSha": "20d3c17b13b6187dc0b00e5033798a71cb9fee74",
+    "releaseStateRef": "refs/heads/buildchain/release-state/0-1-0-alpha-2",
+    "releaseStateSha": "",
+    "package": {
+      "name": "@kungfu-tech/paper-kfd-foundation-real-world-agent-work",
+      "version": "0.1.0-alpha.2"
+    },
+    "exactRef": "refs/tags/v0.1.0-alpha.2"
+  },
+  "workflow": {
+    "name": "Paper Release",
+    "runId": "29070451954",
+    "runAttempt": "1",
+    "url": "https://github.com/kungfu-systems/paper-kfd-foundation-real-world-agent-work/actions/runs/29070451954"
+  },
+  "runnerPolicy": {
+    "productionDefault": "github-hosted",
+    "compatibilityFixture": "self-hosted",
+    "note": "Runner facts are recorded in artifact evidence; the protocol does not require self-hosted runners."
+  },
+  "trustedPublishing": {
+    "provider": "npm",
+    "enabled": true,
+    "auth": "trusted-publishing",
+    "workflowRunId": "29070451954",
+    "workflowRunAttempt": "1",
+    "evidence": ""
+  },
+  "transaction": {
+    "id": "dbc9964953d66a8d40147cba8609276bb5040b55bc43768f65c9a656bffbbadc",
+    "version": "0.1.0-alpha.2",
+    "state": "complete",
+    "previousState": "finalizing",
+    "exactTag": "v0.1.0-alpha.2",
+    "releaseSha": "20d3c17b13b6187dc0b00e5033798a71cb9fee74",
+    "releaseMaterialSha": "20d3c17b13b6187dc0b00e5033798a71cb9fee74",
+    "stateRef": "buildchain/release-state/0-1-0-alpha-2",
+    "statePath": "/home/runner/work/paper-kfd-foundation-real-world-agent-work/paper-kfd-foundation-real-world-agent-work/.buildchain/release-state/v0.1.0-alpha.2.json",
+    "stateSha": "",
+    "evidencePath": "/home/runner/work/paper-kfd-foundation-real-world-agent-work/paper-kfd-foundation-real-world-agent-work/.buildchain/release-evidence/v0.1.0-alpha.2/evidence.json",
+    "updatedAt": "2026-07-10T05:04:22.516Z",
+    "result": {
+      "command": "finalize",
+      "validation": {
+        "valid": true,
+        "errors": []
+      }
+    }
+  },
+  "buildSummary": {
+    "path": "../paper-release/build-summary.json",
+    "sha256": "1a50eed32c326d3911aacca902d530b6d63edc35d31bd9fa835889d54f76088a",
+    "fields": {
+      "schemaVersion": 1,
+      "contract": "kungfu-buildchain-paper-release-build-summary",
+      "repository": "kungfu-systems/paper-kfd-foundation-real-world-agent-work",
+      "sourceSha": "b3e897d2381ea5fc5ca4263305f9f6d6cac81139",
+      "package": {
+        "name": "@kungfu-tech/paper-kfd-foundation-real-world-agent-work",
+        "version": "0.1.0-alpha.2"
+      },
+      "publication": {
+        "manifestPath": ".buildchain/publication/publication-artifact.json",
+        "passportPath": ".buildchain/publication/publication-artifact-passport.json",
+        "registryPath": ".buildchain/publication/publication-registry.json",
+        "primaryArtifact": "_build/main.pdf"
+      },
+      "platforms": [
+        {
+          "id": "paper",
+          "manifestPath": ".buildchain/publication/publication-artifact.json"
+        }
+      ]
+    }
+  },
+  "platformArtifactManifests": [
+    {
+      "path": "../publication/publication-artifact.json",
+      "sha256": "b83eb343e6d558a172512014563dd7050d341730b4dbed8117da8a4705bd528b",
+      "fields": {
+        "schemaVersion": 1,
+        "contract": "kungfu-buildchain-publication-artifact-manifest",
+        "project": {
+          "name": "paper-kfd-foundation-real-world-agent-work",
+          "type": "publication-artifact"
+        },
+        "publication": {
+          "kind": "paper",
+          "title": "Non-Drifting Facts, Inspectable Trust, and Trusted Value: A Foundation Model for Real-World Agent Work",
+          "version": "0.1.0-alpha.2",
+          "abstract": "A foundation and systems design paper for KFD-1/2/3 as a model for real-world agent work.",
+          "authors": [
+            "Keren Dong"
+          ],
+          "primaryArtifact": "_build/main.pdf",
+          "siteConsumers": [
+            "papers.libkungfu.dev"
+          ],
+          "archive": {
+            "contract": "kungfu-buildchain-publication-artifact-archive",
+            "id": "kfd-foundation-real-world-agent-work",
+            "version": "0.1.0-alpha.2",
+            "appendOnly": true,
+            "sameVersionRepublish": "fail-on-digest-change",
+            "immutablePathPolicy": "do-not-sync-delete-immutable-prefixes",
+            "routes": {
+              "canonicalUrl": "https://papers.libkungfu.dev/kfd-foundation-real-world-agent-work/",
+              "latestUrl": "https://papers.libkungfu.dev/kfd-foundation-real-world-agent-work/latest/",
+              "latestEvidenceUrl": "https://papers.libkungfu.dev/kfd-foundation-real-world-agent-work/latest/buildchain.release.json",
+              "immutableVersionPrefix": "https://papers.libkungfu.dev/archive/kfd-foundation-real-world-agent-work/v0.1.0-alpha.2/",
+              "immutableVersionUrl": "https://papers.libkungfu.dev/archive/kfd-foundation-real-world-agent-work/v0.1.0-alpha.2/",
+              "artifactUrlPrefix": "https://papers.libkungfu.dev/archive/kfd-foundation-real-world-agent-work/v0.1.0-alpha.2/"
+            },
+            "registry": {
+              "contract": "kungfu-buildchain-publication-artifact-registry",
+              "path": ".buildchain/publication/publication-registry.json"
+            },
+            "publicArtifacts": {
+              "manifest": {
+                "path": ".buildchain/publication/publication-artifact.json",
+                "url": "https://papers.libkungfu.dev/archive/kfd-foundation-real-world-agent-work/v0.1.0-alpha.2/publication-artifact.json"
+              },
+              "passport": {
+                "path": ".buildchain/publication/publication-artifact-passport.json",
+                "url": "https://papers.libkungfu.dev/archive/kfd-foundation-real-world-agent-work/v0.1.0-alpha.2/publication-artifact-passport.json"
+              },
+              "sourceBundle": {
+                "path": ".buildchain/publication/source.tar.gz",
+                "url": "https://papers.libkungfu.dev/archive/kfd-foundation-real-world-agent-work/v0.1.0-alpha.2/source.tar.gz",
+                "sha256": "8396edd70f523a4cbf46984b86f0a7cf10e1cfe63dd887a90e5f3e91e3fa16c3",
+                "bytes": 15250
+              },
+              "artifacts": [
+                {
+                  "path": "_build/main.pdf",
+                  "bytes": 152465,
+                  "sha256": "ea8853d7fea414763d08a0aa5d1471b0daff2e02a8cf5f8718228b978ecbe795",
+                  "role": "primary",
+                  "url": "https://papers.libkungfu.dev/archive/kfd-foundation-real-world-agent-work/v0.1.0-alpha.2/main.pdf"
+                }
+              ]
+            }
+          }
+        },
+        "toolchain": {
+          "type": "latex-docker",
+          "trustClassification": "pinned-docker-toolchain",
+          "command": "mkdir -p _build && cd paper && latexmk -pdf -outdir=../_build main.tex",
+          "image": "ghcr.io/kungfu-systems/build-images/latex-pdf-builder",
+          "digest": "sha256:c20f3809e96836c1c78e97c76939d12f1de3fed0ea9b7c40c43332ec2ea480f8",
+          "machineVerifiable": true,
+          "invocation": "docker-image-digest"
+        },
+        "source": {
+          "repository": "https://github.com/kungfu-systems/paper-kfd-foundation-real-world-agent-work",
+          "sha": "b3e897d2381ea5fc5ca4263305f9f6d6cac81139",
+          "treeSha": "c7e97bcb9adfdf778b7914e46248145dec9d99ff",
+          "sourcePaths": [
+            "paper",
+            "README.md",
+            "LICENSE",
+            "Makefile"
+          ],
+          "sourceFiles": [
+            {
+              "path": "LICENSE",
+              "bytes": 11357,
+              "sha256": "aaa62ccb6cf175f529bfc10e3e979353178ac122ce331dce2ca43475a9ff7706"
+            },
+            {
+              "path": "Makefile",
+              "bytes": 194,
+              "sha256": "14e06e6ac98fce2608e83d3d9c5abaeab47e00e75a41adbb2982b5c0075f4826"
+            },
+            {
+              "path": "paper/main.tex",
+              "bytes": 2219,
+              "sha256": "bf2db6ae1ae741fa3904e497a9d771a932c46644542c5d0a0ab688da9a31d82c"
+            },
+            {
+              "path": "paper/references.bib",
+              "bytes": 1350,
+              "sha256": "b02646a4eda07bf40ba98798d8eb7e5fdadbc67d212569f06e55b07166ca72b9"
+            },
+            {
+              "path": "paper/sections/01-introduction.tex",
+              "bytes": 3308,
+              "sha256": "1147d8f18c181bef789532c55cbff5cdae828b43f06b0c8539f914237ca0797d"
+            },
+            {
+              "path": "paper/sections/02-problem.tex",
+              "bytes": 3462,
+              "sha256": "58d125955fe7a93602c4b33830a8cf6a9fb5da83179c27ef35dead12489b456d"
+            },
+            {
+              "path": "paper/sections/03-foundation-model.tex",
+              "bytes": 4206,
+              "sha256": "f8d68303a97191d1518f7a90d09950aa669123487906b11c32d9fedbf0ab0ddf"
+            },
+            {
+              "path": "paper/sections/04-operationalization.tex",
+              "bytes": 3522,
+              "sha256": "4475edd91d527072441d56d7fd8d34f65f2eb24d4ceed0e02fda92783c49c081"
+            },
+            {
+              "path": "paper/sections/05-evidence-paths.tex",
+              "bytes": 2504,
+              "sha256": "d79c24d7b17b198b1d03111f443a57f2758724640fafcafa0f18a89339b186bf"
+            },
+            {
+              "path": "paper/sections/06-evaluation.tex",
+              "bytes": 2497,
+              "sha256": "6c32e94b75b0e72b9b16f569dc10fbdaf4889e31f5ce1b8cf1371e1379101929"
+            },
+            {
+              "path": "paper/sections/07-related-work.tex",
+              "bytes": 2270,
+              "sha256": "53b4e9127e82fac838abfe746837aecc0b8f45d4d3d398ac66ef1b8c6115ff08"
+            },
+            {
+              "path": "paper/sections/08-discussion.tex",
+              "bytes": 1741,
+              "sha256": "55af76dcb146b9af0e7f2a8bb0b795cf963b21ae42877cefb51dbd82af1713ac"
+            },
+            {
+              "path": "paper/sections/09-conclusion.tex",
+              "bytes": 1055,
+              "sha256": "70a4b83b2d193a85fa45e123ae359d0e8391499f72188d0277957f95c0c22829"
+            },
+            {
+              "path": "README.md",
+              "bytes": 2574,
+              "sha256": "4e7734e9a677e4ef80e8d5a87cc4796c33b48cdcd71eaf4b6e1a2c6eab06661b"
+            }
+          ],
+          "sourceBundle": {
+            "path": ".buildchain/publication/source.tar.gz",
+            "bytes": 15250,
+            "sha256": "8396edd70f523a4cbf46984b86f0a7cf10e1cfe63dd887a90e5f3e91e3fa16c3"
+          }
+        },
+        "artifacts": [
+          {
+            "path": "_build/main.pdf",
+            "bytes": 152465,
+            "sha256": "ea8853d7fea414763d08a0aa5d1471b0daff2e02a8cf5f8718228b978ecbe795"
+          }
+        ],
+        "metadata": [
+          {
+            "path": "docs/MAP.md",
+            "bytes": 1199,
+            "sha256": "d91c6ff52c219217c6e6b1d9967edf8da2b7457e21cafed1dd88e658cdbf8d40"
+          },
+          {
+            "path": "README.md",
+            "bytes": 2574,
+            "sha256": "4e7734e9a677e4ef80e8d5a87cc4796c33b48cdcd71eaf4b6e1a2c6eab06661b"
+          }
+        ],
+        "generatedAt": "2026-07-10T05:03:54.381Z",
+        "publishedAt": "2026-07-10T05:03:54.381Z",
+        "reproducible": true,
+        "timestampPolicy": "ci-injected",
+        "deterministicInputs": [
+          "publication source paths",
+          "publication metadata paths",
+          "publication primary artifact",
+          "Buildchain publication contract",
+          "source SHA",
+          "source tree SHA"
+        ],
+        "timestampPolicyDetails": {
+          "contract": "kungfu-buildchain-surface-timestamp-policy",
+          "timestampFields": [
+            "generatedAt",
+            "publishedAt"
+          ],
+          "timestampFieldsParticipateInArtifactDigest": false,
+          "artifactDigestScope": "publication artifact digests cover files and source bundle, not manifest timestamps"
+        }
+      },
+      "platform": "",
+      "artifactName": ""
+    }
+  ],
+  "distTagPromotion": {
+    "path": "../release-evidence/v0.1.0-alpha.2/dist-tag-evidence.json",
+    "sha256": "85a874a5a1baa8e7708d83cf84ad68709349707240fbeb3eb69c492d33c4062c",
+    "fields": {
+      "schema": 1,
+      "contract": "kungfu-buildchain-dist-tag-promotion-evidence",
+      "mode": "publish-final-version",
+      "auth": "trusted-publishing",
+      "distTag": "alpha",
+      "source": "workflow-input",
+      "packages": [
+        {
+          "name": "@kungfu-tech/paper-kfd-foundation-real-world-agent-work",
+          "version": "0.1.0-alpha.2",
+          "distTag": "alpha",
+          "role": "main",
+          "digest": "sha512-IUK/wR2zmIxhkZ2ZUgO8Zv0/LHh/QYnyT2Zk3XsICM+AAjt24Q3O7ivSY5Zaz9lbnB3q+9xKyN0rhKL5OQv9pQ=="
+        }
+      ]
+    }
+  },
+  "versionImpact": {
+    "final": "unknown",
+    "source": "default",
+    "rationale": "No surface impact classification was supplied."
+  },
+  "surfaceImpacts": [],
+  "artifacts": [
+    {
+      "group": "node",
+      "kind": "npm",
+      "name": "@kungfu-tech/paper-kfd-foundation-real-world-agent-work",
+      "ref": "0.1.0-alpha.2",
+      "digest": "sha512-IUK/wR2zmIxhkZ2ZUgO8Zv0/LHh/QYnyT2Zk3XsICM+AAjt24Q3O7ivSY5Zaz9lbnB3q+9xKyN0rhKL5OQv9pQ==",
+      "evidence": "../release-evidence/v0.1.0-alpha.2/evidence.json"
+    }
+  ],
+  "evidence": {
+    "artifactEvidence": "artifact-evidence.json",
+    "publishEvidence": "evidence.json",
+    "transactionState": "",
+    "buildSummary": "../paper-release/build-summary.json",
+    "buildFacts": [],
+    "platformArtifactManifests": [
+      {
+        "path": "../publication/publication-artifact.json",
+        "sha256": "b83eb343e6d558a172512014563dd7050d341730b4dbed8117da8a4705bd528b",
+        "platform": "",
+        "artifactName": ""
+      }
+    ],
+    "distTagPromotionEvidence": "../release-evidence/v0.1.0-alpha.2/dist-tag-evidence.json",
+    "kfd1": "",
+    "kfd2": "",
+    "kfd3": "",
+    "impact": "impact.json",
+    "checkReport": "check-report.json",
+    "agentIndex": "agent-index.json"
+  },
+  "recovery": {
+    "rollback": "Use the previous exact release tag or previous floating channel ref.",
+    "verify": "buildchain verify release-passport buildchain.release.json"
+  }
+}
