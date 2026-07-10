@@ -7,7 +7,7 @@ name = "paper-kfd-foundation-real-world-agent-work"
 [publication]
 kind = "paper"
 title = "Non-Drifting Facts, Inspectable Trust, and Trusted Value: A Foundation Model for Real-World Agent Work"
-version = "0.1.0-alpha.0"
+version = "0.1.0-alpha.1"
 abstract = "A foundation and systems design paper for KFD-1/2/3 as a model for real-world agent work."
 authors = ["Keren Dong"]
 primary_artifact = "_build/main.pdf"
