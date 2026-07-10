@@ -1,4 +1,4 @@
-PDF_NAME := non-drifting-facts-inspectable-trust-and-trusted-value-a-foundation-model-for-real-world-agent-work.pdf
+PDF_NAME := kfd-foundation-model.pdf
 
 .PHONY: check pdf clean
 
