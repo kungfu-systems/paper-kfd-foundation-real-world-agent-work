@@ -1,0 +1,28 @@
+name: Paper Release
+
+on:
+  push:
+    branches:
+      - "alpha/v*/v*.*"
+      - "release/v*/v*.*"
+  workflow_dispatch:
+    inputs:
+      buildchain-ref:
+        description: "Temporary Buildchain runtime ref for trusted manual validation"
+        required: false
+        default: ""
+
+jobs:
+  paper-release:
+    uses: kungfu-systems/buildchain/.github/workflows/paper-release.yml@v2
+    permissions:
+      contents: write
+      id-token: write
+      issues: write
+    with:
+      buildchain-ref: ${{ inputs.buildchain-ref || '' }}
+      buildchain-contract-lock-path: .buildchain/contract-lock.json
+      toolchain-type: config
+      verify-command: make check
+      artifact-name: paper-kfd-foundation-real-world-agent-work
+      release-passport-product-name: KFD Foundation for Real-World Agent Work
