@@ -1,0 +1,19 @@
+{
+  "schema": 1,
+  "version": "0.1.0-alpha.7",
+  "channel": "alpha",
+  "source_sha": "0c08cc6e6fbabf2949c04361a88883075f3ba0c4",
+  "release_sha": "0c08cc6e6fbabf2949c04361a88883075f3ba0c4",
+  "target_ref": "alpha/v0/v0.1",
+  "release_material_sha": "0c08cc6e6fbabf2949c04361a88883075f3ba0c4",
+  "publish_tooling_sha": "0c08cc6e6fbabf2949c04361a88883075f3ba0c4",
+  "artifacts": [
+    {
+      "group": "node",
+      "kind": "npm",
+      "name": "@kungfu-tech/paper-kfd-foundation-real-world-agent-work",
+      "ref": "0.1.0-alpha.7",
+      "digest": "sha512-XwDf5AVlKb2HvgSOeSSGXDvmOWR2KEzTt4bZUuP3nWVmwuqohaTsQ5yYjNSEV0gv5D0HTU6CKn+mpNKAXooEtA=="
+    }
+  ]
+}
