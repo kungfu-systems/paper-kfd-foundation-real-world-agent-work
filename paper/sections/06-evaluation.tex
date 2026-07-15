@@ -1,57 +1,154 @@
-\section{Evaluation Plan}
+\section{Composition and Evaluation}
 \label{sec:evaluation}
 
-The foundation model can be evaluated through product and process evidence.
+The cases become more informative when composed. Composition also reveals why
+no one primitive should absorb every authority.
 
-\subsection{Research questions}
+\subsection{A project cut across four dimensions}
 
-\begin{itemize}[leftmargin=*]
-  \item Does a welded-surface register reduce unclassified or accidental
-        contract drift?
-  \item Can agents reconstruct trust claims from package metadata, schemas,
-        release passports, and local facts without private maintainer context?
-  \item Do collaboration interfaces reduce onboarding friction for both humans
-        and agents?
-  \item Do transparent constraints produce fewer recovery failures than hidden
-        workflow capture?
-  \item Can a human or agent reproduce a control decision from exported facts,
-        evidence, residual risk, and responsibility state?
-\end{itemize}
+Kungfu's Project Cut architecture distinguishes the following objects
+\cite{projectCut2026}:
 
-\subsection{Case studies}
+\begin{table}[ht]
+\centering
+\small
+\begin{tabular}{p{0.22\linewidth}p{0.25\linewidth}p{0.39\linewidth}}
+\toprule
+Object & Dimension & Authority \\
+\midrule
+Git tree/commit & material/publication & Exact bytes, ancestry, and atomic
+publication coordinate \\
+Xinfa Atlas & spatial/epistemic & Declared knowledge, evidence state, routes,
+gaps, and semantic closure at one cut \\
+Kungfu Episode & temporal/causal & Actual actions, facts, artifacts, receipts,
+proof inputs, and sealed transition evidence \\
+Project Cut & cross-object binding & Versioned references among source,
+Atlas, Episode delta, policies, omissions, and roots \\
+Release Passport & release responsibility & What reviewed state and artifacts
+were actually promoted and how that claim was verified \\
+\bottomrule
+\end{tabular}
+\caption{Separate authorities composed without a universal project object.}
+\label{tab:composition}
+\end{table}
 
-\begin{itemize}[leftmargin=*]
-  \item \textbf{KFD package release.} Verify that KFD decision texts,
-        standards metadata, schemas, site bundle, and package output stay bound
-        to one fact source.
-  \item \textbf{Buildchain release passport.} Evaluate whether a release
-        passport exposes enough facts for an agent to understand artifact
-        trust and residual risk.
-  \item \textbf{Kungfu agent onboarding.} Test whether an agent can discover
-        Kungfu capabilities, constraints, and value without a private prompt.
-  \item \textbf{Runtime fact ledger recovery.} Interrupt a long-running agent
-        task and measure whether a human or agent can recover from recorded
-        facts and responsibility state.
-\end{itemize}
+A Project Cut is a binding protocol, not a fourth fact engine. Its dependency
+direction is one-way:
 
-\subsection{Measures}
+\begin{equation}
+\begin{split}
+\text{source}_n + \mathrm{Atlas}_n &\rightarrow \mathrm{Episodes}_{n+1}\\
+\text{source}_{n+1} + \mathrm{Episodes}_{n+1}
+  &\rightarrow \mathrm{Atlas}_{n+1}\\
+\text{source projection} + \mathrm{Atlas}_{n+1}
+  + \mathrm{EpisodeDelta}_{n+1} &\rightarrow \mathrm{ProjectCut}_{n+1}\\
+\mathrm{ProjectCut}_{n+1} &\rightarrow \text{Git publication}
+  \rightarrow \text{Release Passport}.
+\end{split}
+\end{equation}
 
-Potential measures include:
+Git ancestry does not become causal truth; Episode does not become complete
+project knowledge; Atlas does not become runtime history; Passport does not
+decide whether the promoted candidate is valuable. The binding preserves
+separate roots and explicit responsibility. This is a concrete KFD-1/2 design:
+facts remain non-drifting inside their authorities, and cross-authority trust
+starts from inspectable bindings rather than name equality.
 
-\begin{itemize}[leftmargin=*]
-  \item number of drift defects found before and after register adoption;
-  \item time to reconstruct a release or task decision from artifacts;
-  \item fraction of trust claims that are machine-checkable, warning, fail, or
-        unverifiable;
-  \item number of private-context assumptions needed for agent onboarding;
-  \item recovery time after task interruption; and
-  \item rate of constraints that can be traced to explicit facts or policies.
-\end{itemize}
+The current Project Cut decision is accepted but only partially implemented.
+Its schema, provider equivalence, settlement, authority cutover, and full
+qualification remain staged. It is used here as a composition design and
+falsifiable implementation plan, not as completed evidence.
 
-\subsection{Artifacts}
+\subsection{The learning loop}
 
-Evaluation artifacts should include public-safe fixtures, release passports,
-contract-world witnesses, trust claims, trust assessments, collaboration
-interface witnesses, exported ledgers, and sanitized recovery scenarios. The
-paper should not depend on private operational logs unless they are sanitized,
-permissioned, and clearly marked as such.
+The composition supports a larger loop:
+
+\begin{equation}
+\mathrm{Atlas}_n
+\rightarrow \text{guides work}
+\rightarrow \mathrm{Episodes}_{n+1}
+\rightarrow \text{reality pressure}
+\rightarrow \text{assessment}
+\rightarrow \mathrm{Atlas}_{n+1}.
+\end{equation}
+
+In KFD-5, grounded human judgment and agent reasoning interpret the pressure.
+In the KFD-6 experiment, an agent mines many Episodes and proposes a candidate
+closure, while held-out evidence and separate promotion authority prevent the
+loop from certifying itself. Release Passport records what version of the loop
+was actually promoted. The result is not a claim of automatic evolution; it is
+an auditable path by which a system can learn without replacing external
+consequence with generated narrative.
+
+\subsection{Claim ladder}
+
+Evaluation should separate increasingly strong claims:
+
+\begin{description}[leftmargin=*,style=nextline]
+  \item[C0: coherent declaration.]
+    The candidate has explicit identity, boundary, authority, lifecycle,
+    operations, fact sources, observer, alternatives, and falsifiers.
+  \item[C1: reproducible artifact.]
+    Independent readers can verify the candidate record, roots, and declared
+    evidence from public or exported material.
+  \item[C2: operational closure.]
+    The object supports its minimum operations under interruption, drift, and
+    recovery rather than only validating a schema.
+  \item[C3: cross-participant reconstruction.]
+    A new human or agent can continue work without private oral context and
+    without silently creating a second authority.
+  \item[C4: generalization.]
+    The candidate reduces reconstruction or coordination cost across projects,
+    participants, or providers while preserving local facts and falsifiers.
+\end{description}
+
+Historical importance, ecosystem lock-in, or universal applicability lies
+beyond C4 and cannot be established by the originating team alone.
+
+\subsection{Evaluation protocols}
+
+\paragraph{Deletion and fuse.}
+Remove the candidate from a controlled workflow. Measure which coordination
+must be reconstructed, which facts become ambiguous, and whether a narrower
+alternative closes the gap. Conversely, test whether the candidate genuinely
+fuses previously separate mechanisms or merely renames them.
+
+\paragraph{Cold-start recovery.}
+Give a fresh participant only the declared artifacts and roots. Measure time,
+private-context requests, unsupported assumptions, and correctness of the
+reconstructed next action. Delete caches and projections to test stage-zero
+recovery from authoritative material.
+
+\paragraph{Drift and fault injection.}
+Change a welded surface without its compatibility boundary; omit an Episode;
+present a stale Atlas; alter an artifact after release; or mismatch a receipt
+and cut. The system should fail visibly or report degraded/unverifiable rather
+than synthesize green state.
+
+\paragraph{Held-out and prospective evidence.}
+For KFD-6, separate discovery Episodes from evaluation Episodes. Include cases
+where the same internal pattern occurs without the proposed boundary. Run the
+candidate in shadow mode, then bounded prospective interventions. Measure
+compression, prediction, transfer, disconfirmation, and intervention outcome
+against retrieval, summarization, and no-new-primitive baselines.
+
+\paragraph{Independent assessment.}
+The candidate generator cannot be the only verifier. A separate evaluator,
+policy, evidence cut, or accountable participant must be able to reject the
+claim. Promotion authority remains separate from discovery authority and
+proportionate to consequence.
+
+\subsection{Current evidence status}
+
+At the July 15, 2026 evidence cut, KFD-1 through KFD-5 are active and KFD-6 is
+draft. The KFD package publishes machine-readable decision and schema surfaces.
+Xinfa Atlas identity and bounded projections are implemented with retained
+qualification references. Buildchain Release Passport operates in stable
+releases. Episode has a substantial product and runtime architecture but mixed
+implementation status across its identity and portability contracts. Project
+Cut is accepted and partial.
+
+This supports C0--C2 unevenly across the cases. It does not yet support a
+comparative C3 study, a C4 generalization claim, or activation of KFD-6. Those
+gaps define the next research work rather than being hidden by the conceptual
+coherence of the model.

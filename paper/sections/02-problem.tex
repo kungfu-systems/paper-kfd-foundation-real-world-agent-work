@@ -1,66 +1,90 @@
-\section{Problem: Real-World Agent Work}
+\section{Problem: Implicit Boundaries Under Agent Pressure}
 \label{sec:problem}
 
-\subsection{From output generation to work participation}
+\subsection{Real-world agent work}
 
-We use \emph{real-world agent work} to mean work where agents help humans
-manage concrete tasks in a persistent environment. Such work can involve:
+We use \emph{real-world agent work} for persistent work in which agent output
+can change or support decisions about concrete artifacts, responsibilities, or
+external state. Examples include repository changes, builds, package releases,
+remote operations, long-running tasks, runtime traces, user approvals, and
+recovery after interruption. The work spans several kinds of state:
 
 \begin{itemize}[leftmargin=*]
-  \item local and remote files;
-  \item source repositories and pull requests;
-  \item terminals, background sessions, and build logs;
-  \item model calls, tool calls, traces, and runtime events;
-  \item package releases, checksums, signatures, and deployment evidence;
-  \item user approvals, refusals, handoffs, and review decisions; and
-  \item GUI, CLI, API, documentation, and agent-facing metadata surfaces.
+  \item material state such as source trees, binaries, and documents;
+  \item runtime state such as actions, observations, receipts, and failures;
+  \item epistemic state such as claims, evidence, gaps, and current decisions;
+  \item responsibility state such as purpose, authority, ownership, and next
+        action; and
+  \item presentation state exposed through human and agent interfaces.
 \end{itemize}
 
-The central risk is not simply that an agent might make a mistake. The deeper
-risk is that the work environment becomes too complex for either the human or
-the agent to reconstruct. When facts drift, trust moves to habit or authority.
-When trust is not inspectable, control actions become guesses. When products
-obtain compliance through hidden pressure, participants may appear to
-cooperate while losing the ability to understand, challenge, or recover the
-work.
+No participant sees this entire world directly. Work therefore depends on
+representations and handoffs. Distributed cognition already treats cognition
+as spread across people and artifacts rather than contained in one head
+\cite{hutchins1995cognition}; agent participation increases both the capacity
+and the coordination burden of that system.
 
-\subsection{Three recurring failures}
+\subsection{The implicit-boundary pattern}
+
+Let a contact surface be a relation between at least two sides $L=\{l_1,
+l_2,\ldots\}$ whose outputs, interpretations, or authorities must meet. Before
+the surface becomes load-bearing, coordination may be provided by an implicit
+mechanism $H$: memory, convention, reputation, a private prompt, a maintainer's
+interpretation, or manual reconstruction.
+
+Pressure changes when a new participant, larger scale, higher frequency,
+stronger authority, greater heterogeneity, lower latency tolerance, or larger
+consequence enters the system. We denote that change by $\Delta P$. Recurrent
+failures $\Phi$ then become visible: translation mistakes, incomplete
+handoffs, lost attribution, ambiguous authority, repeated reconstruction, or
+unowned responsibility.
+
+The boundary problem can be summarized as:
+
+\begin{equation}
+(L, H, \Delta P) \longrightarrow \Phi .
+\end{equation}
+
+A primitive candidate $X$ proposes to mediate that surface. It has value only
+if it turns part of the old implicit mechanism into a stable, inspectable
+object without hiding the responsibility it replaces:
+
+\begin{equation}
+X = (I, B, A, Y, O),
+\end{equation}
+
+where $I$ is identity, $B$ is boundary, $A$ is authority, $Y$ is lifecycle,
+and $O$ is the minimum useful operation set.
+
+\subsection{Three failure classes}
 
 \paragraph{Fact drift.}
-A product often has several versions of the same important fact: source
-configuration, packaged configuration, UI defaults, CLI behavior, release
-metadata, documentation, schema files, and runtime behavior. In low-complexity
-systems, small mismatches may be tolerable. In agent work, the mismatch becomes
-amplified: an agent may read one surface, a human may inspect another, and the
-runtime may enforce a third.
+The same load-bearing fact appears differently in source configuration,
+packaged artifacts, documentation, UI defaults, CLI output, schemas, and
+runtime behavior. An agent may read one surface, a human another, and the
+runtime enforce a third. More intelligence then accelerates disagreement
+instead of resolving it.
 
-\paragraph{Opaque trust.}
-Many systems ask users to trust claims without exposing enough supporting
-facts. A release is described as safe, a trace is summarized as complete, a
-plugin is marked trusted, a deployment is called successful, or an agent run is
-said to be recoverable. Without source facts, evidence, residual-risk state,
-and responsibility boundaries, those claims rely on maintainer reputation or
-interface authority rather than inspectable truth.
+\paragraph{Trust by reconstruction.}
+A release, task completion, runtime state, or plugin is called trustworthy,
+but the supporting facts, evidence cut, residual risk, and responsibility
+boundary are unavailable. The recipient must trust authority or repeat the
+maintainer's reconstruction. Provenance systems reduce this cost for software
+artifacts \cite{slsa,intoto2019}; real-world agent work creates the same need
+across action and knowledge boundaries.
 
-\paragraph{Coerced cooperation.}
-Agent-era products can easily become coercive. A product may force a managed
-workflow, hide prompts or constraints, capture work state in a private cloud
-surface, make alternative paths difficult, or present defaults that look like
-choices but cannot be inspected. This may increase short-term adoption but
-weakens cooperation. Capable participants need to understand value before they
-can trust it, and understand constraints before they can cooperate with them.
+\paragraph{Cooperation by capture.}
+A product may force participants into a managed workflow, conceal constraints,
+or make alternative paths impractical. This can produce compliance while
+destroying the participant's ability to inspect value, challenge a claim, or
+recover independently. For agents, a private prompt can become the only
+interface; for humans, a GUI can become the only place where state appears.
 
-\subsection{Why this is not only a software problem}
+\subsection{Why friction alone is insufficient}
 
-The problem is not limited to software correctness. It is a practical
-philosophy of survival in complex systems. Humans have often survived by using
-low-cost substitutes for facts: authority, habit, reputation, intuition, or
-local memory. Those substitutes can work in stable environments. Agent work
-expands the radius of action and memory, making the world more complex while
-also providing more intelligence for managing that complexity. The design
-question becomes whether that new intelligence is used to build stronger fact
-worlds, or whether it merely accelerates opaque complexity.
-
-This paper takes the first path. It treats humans and agents as intelligent
-participants that need a shared fact world, inspectable trust, and transparent
-value to cooperate in reality.
+Not every recurring problem deserves a new primitive. The failure may be a bug,
+an absent policy, a local abstraction, poor documentation, or a narrow internal
+model. Naming a false primitive exports complexity to every consumer. A valid
+discovery method must therefore preserve the no-new-primitive alternative and
+ask whether deleting the candidate recreates the same coordination burden.
+Boundary pressure generates candidates; it does not certify them.
