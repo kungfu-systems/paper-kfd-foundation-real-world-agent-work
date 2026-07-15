@@ -7,7 +7,7 @@ name = "paper-kfd-foundation-real-world-agent-work"
 [publication]
 kind = "paper"
 title = "Facts, Trust, and Boundary Primitives: A Foundation Model for Real-World Agent Work"
-version = "0.1.0-alpha.6"
+version = "0.1.0-alpha.7"
 abstract = "A foundation and systems design paper for discovering and validating boundary primitives in real-world agent work."
 authors = [ "Keren Dong" ]
 primary_artifact = "_build/kfd-foundation-model.pdf"
