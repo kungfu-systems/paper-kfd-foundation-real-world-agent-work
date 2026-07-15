@@ -31,3 +31,5 @@ jobs:
       artifact-paths: _build/kfd-foundation-model.pdf
       github-release: true
       release-passport-product-name: KFD Foundation for Real-World Agent Work
+    secrets:
+      BUILDCHAIN_PROMOTION_TOKEN: ${{ secrets.BUILDCHAIN_PROMOTION_TOKEN }}
