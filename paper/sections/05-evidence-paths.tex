@@ -1,53 +1,134 @@
-\section{Evidence Paths}
+\section{Three Boundary-Primitive Cases}
 \label{sec:evidence}
 
-This draft is a foundation paper. Its claims should become stronger through
-concrete evidence. We identify three evidence paths.
+The three cases in this section arose in different subsystems and have
+different maturity. Their common feature is not that they record data. Each
+names a contact surface where participants previously relied on implicit human
+coordination.
 
-\subsection{The KFD package}
+\begin{table}[ht]
+\centering
+\small
+\begin{tabular}{p{0.16\linewidth}p{0.30\linewidth}p{0.38\linewidth}}
+\toprule
+Candidate & Contact surface & Implicit mechanism replaced \\
+\midrule
+Xinfa Atlas & project reality $\leftrightarrow$ human/agent understanding &
+Repeated repository interpretation, private prompts, hand-written summaries,
+and divergent human/agent views \\
+Kungfu Episode & agent action $\leftrightarrow$ real-world result &
+Sessions, logs, process exit, and human reconstruction of which facts,
+artifacts, receipts, and proof belong to one unit of work \\
+Release Passport & reviewed source/build $\leftrightarrow$ released artifact &
+Maintainer memory about what was promoted, which checks ran, which artifacts
+exist, and what users can verify \\
+\bottomrule
+\end{tabular}
+\caption{Three candidate primitives and the implicit boundaries they mediate.}
+\label{tab:cases}
+\end{table}
 
-The KFD repository and npm package are a self-proof case. The package exposes
-decision texts, a registry, standards metadata, schemas, site bundle data, and
-checks. It gives both humans and agents a stable path for reading the same
-foundation. It also publishes KFD-owned schemas for contract-world witnesses,
-trust taxonomy, trust claims, trust assessments, collaboration interfaces, and
-observer perspectives.
+\subsection{Xinfa Atlas: reality to shared understanding}
 
-This package can demonstrate that the model is not only prose. KFD-1 is
-expressed as contract-world metadata. KFD-2 is expressed as trust taxonomy and
-assessment schemas. KFD-3 is expressed as collaboration interface and witness
-schemas. The package becomes an example of the model bearing itself.
+A Xinfa Atlas is defined as the smallest portable, reproducible, and
+verifiable semantic closure compiled at a declared source and policy cut, from
+which equivalent human and agent views can be derived without reinterpreting
+the unbounded source corpus \cite{xinfaAtlas2026}. It binds scope, provenance,
+verification state, gaps, conflicts, routes, and deterministic identity while
+remaining a representation rather than source authority.
 
-\subsection{Buildchain}
+The boundary pressure is cognitive. A repository may be readable to a
+maintainer because that person carries years of implicit context. New humans,
+agents, documentation sites, IDEs, and task runners otherwise reconstruct
+different project models. A context window or archive is too narrow as the
+primitive: it names a transport or one reader's selection. Atlas names the
+cut-bound closure from which bounded Human Views, Agent Task Charts, and GUI
+views can be derived under the same root \cite{xinfaProjections2026}.
 
-Buildchain is the release and provenance evidence path. It can test whether
-non-drifting contract worlds, trust assessments, and release passports can
-survive real software complexity. Relevant evidence includes contract locks,
-release passports, KFD gates, surface-impact classification, package
-publishing, web-surface deployments, and future paper/publication artifact
-workflows.
+The deletion test is strong but not conclusive. Without Atlas, the system
+either repeats the full closure definition, elevates a storage pack into the
+user object, or allows each projection to become a separate fact source. The
+narrower alternative is retrieval over raw repositories. That alternative
+would falsify Atlas if it delivered equivalent provenance, portability,
+bounded cost, gap visibility, deterministic identity, and cross-reader parity
+without recreating Atlas semantics.
 
-Buildchain matters because it converts foundation principles into release
-gates. If a product cannot produce facts, bind them into trust evidence, and
-surface residual risk, it should not ask users or agents to treat its release
-claims as fully trusted.
+As of the evidence cut used by this paper, Atlas identity and bounded
+projections are accepted and implemented in Kungfu's Xinfa subsystem. Adoption
+and measurable context-cost reduction remain open evaluation questions.
 
-\subsection{Kungfu}
+\subsection{Kungfu Episode: action to consequence}
 
-Kungfu is the product evidence path. It aims to manage real-world work with
-agents through local facts, GUI/TUI/CLI/API surfaces, runtime tracing,
-extension trust gates, profiles, managed runs, remote imports, and long-cycle
-task state.
+A Kungfu Episode is a bounded causal unit of actual work whose facts,
+artifacts, dependencies, receipts, and verification roots can be inspected,
+sealed, exported, recovered, and used to support decisions
+\cite{kungfuEpisode2026}. The object is deliberately not a chat session,
+process, or bag of logs. Those coordinates end for technical reasons, while
+real responsibility may span runs and preserve useful partial work after a
+failure.
 
-Kungfu can test the model under pressure. It can show whether local fact
-ledgers reduce recovery cost, whether dual-first interfaces help agents use the
-product without workflow capture, whether release passports improve trust, and
-whether transparent constraints produce better cooperation than hidden control.
+The boundary pressure is causal and accountable. A successful tool call does
+not prove visibility, durability, projection, or completion. A process exit
+does not state which artifacts belong to the work. A trace can show calls
+without defining the authoritative unit that export, fsck, recovery, and later
+trust assessment should address. Episode collects those relations under one
+bounded lifecycle while keeping Claim distinct from Proof and Decision.
 
-\subsection{Evidence status}
+The deletion test asks whether runtime consumers can still export, verify,
+recover, and reason about one unit of actual work without reconstructing it
+from sessions, logs, traces, and external files. A narrower event-group label
+would falsify the need for Episode if it supported the same causal closure,
+identity, lifecycle, receipts, and recovery semantics.
 
-The current paper should be read as an initial model and design agenda. Strong
-empirical claims require future evidence from the three paths above. The most
-important next step is not to add more philosophy, but to turn each layer into
-checks, artifacts, and case studies that independent humans or agents can
-inspect.
+Episode is the central product vocabulary and an accepted architectural
+object, but its implementation evidence is mixed. Core causal-segment work is
+active while some sealed identity, cross-provider equivalence, and bundle
+contracts remain proposed or partial. This paper therefore treats Episode as
+a strong, actively dogfooded candidate rather than a completed universal
+standard.
+
+\subsection{Buildchain Release Passport: build activity to released truth}
+
+Buildchain Release Passport is a durable release responsibility record for
+artifacts that users or agents depend on \cite{buildchainPassport2026}. Its
+first-read artifact, \texttt{buildchain.release.json}, binds reviewed source,
+release line and channel, exact tags, artifact hashes, checks, surface impact,
+package publication, residual evidence, and transaction state.
+
+The boundary pressure comes after CI says green. Build systems can compile,
+test, and upload while leaving the recipient unable to answer which reviewed
+state was released, what exact artifact was produced, which floating channel
+now points to it, or how to verify and recover the transaction. Historically a
+maintainer reconstructs this story from workflow pages, tags, package
+registries, and memory.
+
+The deletion test is whether an independent human or agent can reconstruct the
+same release responsibility record from ordinary provider state at comparable
+cost and without private maintainer context. The narrower alternative is a
+provenance attestation alone. That alternative is sufficient only if it also
+captures promotion, compatibility impact, package-set and channel state,
+residual risk, and recovery responsibility rather than artifact origin alone.
+
+This is the most mature case in the paper. Buildchain stable release
+\texttt{v2.12.7} publishes the passport and its supporting evidence as GitHub
+Release assets. Maturity in one ecosystem does not prove generality, but it
+does show that the object can bear real release operations rather than remain
+only a diagram.
+
+\subsection{Shared structure and bounded claim}
+
+The cases support a common pattern:
+
+\begin{equation}
+\text{implicit coordination}
+\xrightarrow{\Delta P}
+\text{recurring boundary failure}
+\xrightarrow{X}
+\text{inspectable mediation}.
+\end{equation}
+
+They do not yet establish that the pattern is necessary for all primitives or
+that any case will reach historical significance. The evidence supports a
+candidate-generation method and three non-trivial implementation cases. Time,
+independent adoption, and adversarial deletion tests must carry the stronger
+claim.

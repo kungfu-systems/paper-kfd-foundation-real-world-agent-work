@@ -1,79 +1,119 @@
-\section{Operationalizing the Model}
+\section{Derived Procedures for Primitive Discovery}
 \label{sec:operationalization}
 
-The model becomes useful only if it can be expressed in engineering surfaces.
-This section sketches the main surfaces.
+The foundation says what must remain true. The derived procedures say how to
+act when perspective and discovery become load-bearing.
 
-\subsection{Welded-surface registers}
+\subsection{KFD-4: declare the observer}
 
-KFD-1 requires products to identify surfaces that consumers weld to. A welded
-surface is one that either binds consumers at integration time, or produces
-outputs that remain depended on after a run. Examples include schemas, ABIs,
-configuration contracts, CLI commands, release channel ontology, audit
-records, and runtime fact ledgers.
+Real-world work combines facts from machines, agents, repositories, and
+external systems. A mixed-source timeline is not an absolute view from
+nowhere. KFD-4 requires a perspective-bearing view to declare the observer,
+accepted sources and ranges, projection policy, causal constraints,
+deterministic tie-breakers, freshness, and degraded state.
 
-A welded-surface register is the product's map of such surfaces. Changes are
-classified against the register as breaking, additive, no registered-surface
-impact, or unclassifiable. The last class is important: when a change cannot
-be classified, the correct response is not to guess but to fix the register.
+This does not make facts relative. Source-local records, provenance, causal
+links, hashes, and receipts remain load-bearing. The projection is relative to
+an observer and evidence cut. Known causality must dominate presentation
+policy; missing evidence should degrade the view rather than be hidden behind
+wall-clock sorting. The procedure follows distributed-systems results that
+reject a single physical clock as sufficient causal authority
+\cite{lamport1978time}.
 
-\subsection{Trust claims and assessments}
+KFD-4 is necessary for primitive discovery because the pressure itself is
+observed from somewhere. Two investigations may honestly reach different
+conclusions when their cuts, values, or operating boundaries differ. The
+observer declaration makes that disagreement inspectable rather than
+silently universalizing one view.
 
-KFD-2 can be operationalized through trust claims and trust assessments. A
-claim describes what the product wants a participant to rely on. The assessment
-binds the claim to facts, evidence, machine checks, residual risk, and
-responsibility boundaries.
+\subsection{KFD-5: couple grounded judgment and scalable reasoning}
 
-Release passports are one projection of this pattern. A release passport can
-state source commit, artifact hashes, build workflow, schema versions, checks,
-unverified claims, degraded evidence, and responsible maintainers. The same
-pattern can apply to configuration contracts, timeline views, collaboration
-interfaces, and product control surfaces.
+KFD-5 defines the current executable discovery form. Grounded judgment
+contributes contact with consequences, value, and the ability to notice that a
+recurring burden matters. Scalable reasoning contributes search, comparison,
+reconstruction, formalization, counterexample generation, and verification.
+Humans and agents commonly supply these functions respectively, but the
+functions are not permanent species boundaries.
 
-\subsection{Collaboration interfaces}
+A candidate record preserves the following chain:
 
-KFD-3 can be operationalized through collaboration interfaces. A collaboration
-interface is not merely an API list. It should expose:
+\begin{enumerate}[leftmargin=*]
+  \item ground a recurring burden in a declared evidence cut;
+  \item bind sources, observers, gaps, and responsibility;
+  \item generate candidates without privileging the first coherent name;
+  \item compare prior art, narrower abstractions, and doing nothing;
+  \item demand minimum identity, boundary, authority, lifecycle, and
+        operations;
+  \item run deletion and fuse tests;
+  \item declare evidence that would reject, narrow, subsume, or reopen the
+        candidate;
+  \item dogfood it under load; and
+  \item record accepted, provisional, rejected, or subsumed as valid outcomes.
+\end{enumerate}
 
-\begin{itemize}[leftmargin=*]
-  \item what the product can do;
-  \item why that capability is valuable;
-  \item which facts make the value claim inspectable;
-  \item what modes are available;
-  \item what constraints apply;
-  \item how constraints can be reviewed or escalated; and
-  \item where cooperation leaves records.
-\end{itemize}
+The \emph{deletion test} asks whether removing the candidate forces
+participants to reconstruct the same missing coordination. The \emph{fuse
+test} asks whether mechanisms that previously appeared separate become one
+more economical system when the object exists. Neither test proves a
+primitive; both expose whether the name carries independent explanatory and
+operational load.
 
-For agents, this means a product should provide stable local discovery
-surfaces: command metadata, schemas, examples, envelopes, package manifests,
-or onboarding documents. The point is not to make agents obey the product. The
-point is to let them discover the product's value and limits through facts.
+\subsection{Boundary pressure as a diagnostic}
 
-\subsection{Local fact ledgers}
+When the implicit-boundary pattern is present, the discovery record can add:
 
-Real-world agent work benefits from local fact ledgers. A ledger can record
-observed work, provenance, hashes, runs, decisions, trace spans, release facts,
-human approvals, and imported remote evidence. The ledger does not need to be
-perfect or universal. It should preserve enough facts for recovery, audit,
-export, and cooperation.
+\begin{equation}
+B_X = (L, H, \Delta P, \Phi, M_X, N),
+\end{equation}
 
-This is where the model becomes more than documentation. A product that keeps
-facts local and inspectable can let humans and agents ask:
+where $L$ names the contact sides, $H$ the previous implicit mechanism,
+$\Delta P$ the pressure change, $\Phi$ recurring failures, $M_X$ the
+candidate's mediation claim, and $N$ a narrower internal-object alternative.
 
-\begin{quote}
-What happened? Which facts support that? What remains uncertain? Who owns the
-next decision? What action is safe now?
-\end{quote}
+The hypothesis gains support when the candidate makes translation, handoff,
+attribution, authority, or responsibility stable and inspectable; deletion
+recreates the old burden; and the narrower alternative fails to explain the
+same evidence at lower cost. It loses support when an internal model, policy,
+label, or local abstraction removes the friction without exporting a new
+identity.
 
-\subsection{Dual-first surfaces}
+Boundary pressure is optional and non-exclusive. A valid primitive may be
+discovered through another grounded mechanism, and a heavily pressured
+boundary may require no new primitive. This asymmetry protects the framework
+from becoming a universal naming machine.
 
-The model implies dual-first design. Human GUI surfaces and agent CLI/API
-surfaces should not diverge into different truth worlds. A human may prefer a
-dashboard, while an agent may prefer JSON, schema, or command output. The
-product should let both inspect the same facts, claims, constraints, and
-records.
+\subsection{KFD-6: autonomous discovery without self-certification}
 
-This is a stronger requirement than adding an API after the GUI. The API,
-CLI, documentation, envelope, and local package metadata are first-class
-interfaces for intelligent participants.
+The draft KFD-6 asks whether sufficiently rich causal experience can let an
+agent perform more of the discovery step without a human translating every
+reality pressure. An experience corpus may include observations, choices,
+actions, dependencies, outcomes, costs, failures, retries, overrides, and
+receipts connected by causal links. It remains a projection of reality, not
+reality itself.
+
+An autonomous loop must declare corpus and observer cuts, missing evidence,
+selection and instrumentation bias, the boundary hypothesis, held-out
+evaluation evidence, bounded intervention authority, and a separate promotion
+authority. The generator cannot be its sole verifier, and generated examples
+cannot satisfy the evidence gate. The intended loop is:
+
+\begin{equation}
+\mathrm{Atlas}_n \rightarrow \text{action} \rightarrow \text{Episodes}
+\rightarrow \text{boundary pressure} \rightarrow \text{candidate}
+\rightarrow \mathrm{Atlas}_{n+1}.
+\end{equation}
+
+KFD-6 remains draft until a real implementation beats retrieval or
+summarization baselines, rejects attractive false candidates, transfers a
+candidate across contexts, preserves disconfirming evidence, and leaves an
+auditable path from corpus cut to promotion decision. Failure is evidence
+against activation, not a reason to weaken the gate.
+
+\subsection{Promotion rule}
+
+Discovery and promotion are distinct authorities. A candidate may validate a
+schema, explain prior cases, or be proposed by an agent without becoming
+load-bearing. Promotion should be proportional to consequence and supported
+by independent evidence. This separation applies KFD-2 to the discovery
+procedure itself and prevents a coherent loop from manufacturing its own
+trust.

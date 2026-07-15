@@ -1,24 +1,24 @@
 \section{Introduction}
 
-Software is entering a stage where agents are not only producing isolated text
-or code snippets. They are increasingly participating in real work: editing
-files, operating terminals, reading logs, opening pull requests, writing
-release evidence, using product APIs, coordinating with humans, and resuming
-tasks across time. This work is not purely conversational and not purely
-automated. It is situated in a shared world of artifacts, constraints,
-decisions, responsibility, and history.
+Software systems have long crossed boundaries: source becomes an artifact,
+events become state, and local observations become shared decisions. Much of
+the coordination at those boundaries has remained implicit. A maintainer
+remembers why a release is trustworthy. A worker reconstructs which facts a
+handoff meant. A user infers whether a successful command implies durability.
+When the participants are few and the environment is stable, this invisible
+work can be absorbed by human memory and convention.
 
-The common framing is to ask how software systems should become
-\emph{agent-facing}. That framing is useful but too narrow. It still treats
-the agent primarily as a tool user at the edge of a software interface. In
-real-world agent work, the agent is often a reasoning participant: it observes,
-infers, explains, recovers, delegates, refuses unsafe actions, and helps humans
-interpret complex state. The product problem is therefore not only interface
-design. It is world design: what kind of fact world do humans and agents share,
-how can claims in that world be trusted, and how can cooperation happen without
-hidden pressure or opaque control?
+Agents change the pressure on those boundaries. They can act across many
+repositories, tools, machines, and time spans, but they do not inherit the
+unstated context that made an old process work. Humans, meanwhile, cannot
+continuously reconstruct every action, artifact, fact source, and residual
+risk produced at agent speed. The resulting problem is not only how to expose
+an API to an agent. It is how to build a shared work world in which humans and
+agents can recover what happened, decide what to trust, and cooperate without
+hidden control.
 
-This paper proposes a three-layer foundation model:
+This paper starts from a compact foundation published as the first three Kung
+Fu Decisions (KFDs) \cite{kfd2026alpha25}:
 
 \begin{quote}
 KFD-1: facts must not drift.\\
@@ -26,42 +26,62 @@ KFD-2: trust must start from facts.\\
 KFD-3: cooperation must start from trusted value.
 \end{quote}
 
-Together these layers define a practical chain:
+The three statements form an ordered model rather than an independent list.
+Non-drifting facts make claims inspectable. Inspectable claims make value
+trustable. Trusted value makes durable cooperation possible. Later KFDs derive
+procedures from that foundation: KFD-4 requires perspective-bearing timelines
+to declare their observer; KFD-5 joins grounded judgment with scalable
+reasoning to discover primitives; and the draft KFD-6 asks whether agents can
+perform more of that discovery from causal experience without certifying their
+own output.
+
+The central systems hypothesis developed here is:
 
 \begin{quote}
-non-drifting facts $\rightarrow$ inspectable trust $\rightarrow$ trusted value
-$\rightarrow$ voluntary cooperation $\rightarrow$ reviewable record.
+A strong primitive often appears at a contact surface that was handled
+implicitly until a new participant or new scale made its coordination cost
+load-bearing.
 \end{quote}
 
-The model is intentionally compact. It does not claim that every system must
-become a journal, that every fact can be captured perfectly, or that agents
-have a metaphysical status that products must accept. It makes a narrower and
-more testable claim: systems that ask humans and agents to rely on real work
-should make important facts non-drifting, bind trust claims to inspectable
-evidence and responsibility state, and expose value and constraints clearly
-enough that cooperation is not obtained through pressure, manipulation, or
-hidden workflow capture.
+Such a primitive does not merely describe one side of a system. It mediates a
+boundary: translation, handoff, attribution, authority, responsibility, or
+recovery becomes a stable object that software can identify and inspect. This
+idea is related to boundary objects in sociology \cite{star1989boundary}, but
+the focus here is an engineering gate for promoting a candidate into a
+first-class identity with lifecycle, authority, operations, and falsifiers.
 
-The contribution of this draft is:
+We study three current cases. A \emph{Xinfa Atlas} sits between project reality
+and human/agent understanding. A \emph{Kungfu Episode} sits between agent
+action and real-world result. A \emph{Buildchain Release Passport} sits
+between reviewed source/build activity and the artifact world that users
+receive. Each previously depended on a human reconstructing an implicit
+boundary. Each now has, at a different maturity level, a named identity and
+machine-readable evidence surface.
+
+This paper makes five contributions:
 
 \begin{itemize}[leftmargin=*]
-  \item a problem statement for real-world agent work as a shared fact, trust,
-        and cooperation problem;
-  \item a three-layer foundation model based on non-drifting facts,
-        inspectable trust, and trusted value;
-  \item an operational mapping from the model to contract worlds, trust
-        assessments, collaboration interfaces, release passports, and local
-        fact ledgers;
-  \item an evidence path using the KFD package, Buildchain, and Kungfu as
-        concrete implementation cases; and
-  \item an evaluation plan for turning the model from a design position into
-        product and systems evidence.
+  \item an ordered foundation for facts, trust, and cooperation in real-world
+        agent work;
+  \item a derived primitive-discovery procedure in which boundary pressure is
+        a strong but non-exclusive diagnostic;
+  \item a comparative analysis of Atlas, Episode, and Release Passport as
+        boundary-primitive candidates;
+  \item a composition model using Project Cut to keep material, epistemic,
+        causal, and release authorities separate while binding them; and
+  \item a falsifiable evaluation program based on deletion, fuse, recovery,
+        held-out, counterfactual, and independent-verifier tests.
 \end{itemize}
 
-The rest of the paper is organized as follows. Section~\ref{sec:problem}
-defines real-world agent work and the failure modes that motivate the model.
-Section~\ref{sec:foundation} presents the three-layer model.
-Section~\ref{sec:operationalization} describes engineering surfaces.
-Section~\ref{sec:evidence} outlines evidence paths. Section~\ref{sec:evaluation}
-gives an evaluation plan. Section~\ref{sec:related} situates the model against
-related work.
+The claims are deliberately bounded. The paper does not claim that every
+boundary needs a primitive, that the three cases are universally applicable,
+or that their historical importance is established. KFD-6 remains a draft
+experiment. The contribution is a systems design with inspectable
+implementation evidence and explicit conditions under which its stronger
+claims should be rejected.
+
+Section~\ref{sec:problem} defines the boundary problem. Section~\ref{sec:foundation}
+presents the foundation. Section~\ref{sec:operationalization} derives the
+discovery procedures. Section~\ref{sec:evidence} compares the three cases.
+Section~\ref{sec:evaluation} gives the composition and evaluation model.
+Sections~\ref{sec:related} and~\ref{sec:discussion} relate and bound the work.
