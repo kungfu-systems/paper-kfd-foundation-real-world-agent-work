@@ -1,46 +1,58 @@
 \section{Related Work}
 \label{sec:related}
 
-\subsection{Human augmentation}
+\subsection{Boundary objects and distributed cognition}
 
-Engelbart framed computing as augmenting human intellect rather than merely
-automating tasks \cite{engelbart1962augmenting}. This paper extends that
-augmentation stance to real-world work with agents. The product should not
-only automate actions; it should make the shared work environment more
-legible for human and agent participants.
+Star and Griesemer introduced boundary objects as artifacts that are adaptable
+to local needs while maintaining a common identity across social worlds
+\cite{star1989boundary}. Xinfa Atlas is closest to that tradition: human and
+agent projections differ while binding the same semantic root. The present
+work uses \emph{boundary primitive} more narrowly for a candidate promoted into
+a systems object with declared authority, lifecycle, operations, and
+falsifiers. It also treats pressure at the contact surface as a discovery
+diagnostic, not as a definition of all primitives.
+
+Distributed cognition studies how cognition is organized across people,
+artifacts, and environments \cite{hutchins1995cognition}. Engelbart's
+augmentation program similarly framed computing as increasing collective
+human capability rather than merely automating tasks
+\cite{engelbart1962augmenting}. This paper extends those positions to systems
+where agents are reasoning participants and the shared artifacts must carry
+fact, trust, and responsibility boundaries.
 
 \subsection{Situated action and coordination}
 
-Suchman's work on situated action argues that plans and situated practice have
-a complex relationship \cite{suchman1987plans}. Winograd and Flores emphasize
-language, commitments, and coordination in work \cite{winograd1986understanding}.
-The KFD foundation shares the view that work is not reducible to static
-instructions. It differs by focusing on the engineering of fact sources,
-trust, and collaboration surfaces for agent-era products.
+Suchman shows that plans and situated practice cannot be collapsed into one
+static instruction model \cite{suchman1987plans}. Winograd and Flores emphasize
+commitment and coordination in work \cite{winograd1986understanding}. The KFD
+foundation shares the view that action is situated and cooperation is not
+reducible to command execution. Its specific contribution is an engineering
+chain from non-drifting facts through purpose-bound trust to collaboration and
+reviewable records.
 
-\subsection{Distributed systems and event evidence}
+\subsection{Events, traces, and provenance}
 
-Lamport's work on time and ordering shows that physical time is not enough for
-causal reasoning in distributed systems \cite{lamport1978time}. Event sourcing
-treats current state as derived from recorded events \cite{fowler2005eventsourcing}.
-Distributed tracing records runtime relationships across components
-\cite{opentelemetry}. These mechanisms provide important evidence, but the KFD
-foundation addresses a broader product trust question: how facts become
-non-drifting, how claims become inspectable, and how participants cooperate
-through trusted value.
+Event sourcing reconstructs state from recorded events
+\cite{fowler2005eventsourcing}; distributed tracing preserves causal
+relationships among runtime operations \cite{opentelemetry}; and Lamport's
+ordering model distinguishes causality from a universal physical clock
+\cite{lamport1978time}. Episode and KFD-4 build on these concerns but add a
+first-class unit of work, declared observer, responsibility, proof, and
+decision boundary. A trace span is useful evidence inside an Episode without
+becoming the Episode's complete authority.
 
-\subsection{Software supply chain and provenance}
+Software supply-chain systems make artifact origin and build process
+inspectable. SLSA defines provenance expectations \cite{slsa}, while in-toto
+models authorized supply-chain steps and evidence \cite{intoto2019}. Release
+Passport is compatible with these mechanisms. Its additional focus is the
+post-build responsibility record: reviewed promotion, channel movement,
+compatibility impact, artifact/package set, transaction recovery, and the
+first machine-readable entrypoint an agent should inspect.
 
-Software supply-chain mechanisms such as provenance attestations and
-reproducible builds aim to make artifacts more trustworthy \cite{slsa}.
-KFD-2 is compatible with this direction but generalizes beyond release
-artifacts. The same trust assessment structure can apply to configs, schemas,
-collaboration interfaces, timeline views, runtime facts, and agent control
-surfaces.
+\subsection{What remains distinct}
 
-\subsection{Agent tooling}
-
-Current agent tooling often emphasizes tracing, evaluation, prompt
-management, or workflow execution. These are valuable subsystems. The KFD
-foundation argues for a higher layer: real-world agent work needs a shared
-fact and trust model before tracing or control can become durable cooperation.
+Existing work provides important components: shared boundary artifacts,
+situated coordination, causal ordering, tracing, and provenance. This paper's
+distinct claim is their ordered composition into a foundation for real-world
+agent work and a falsifiable procedure for discovering when implicit
+coordination should become a new load-bearing object.

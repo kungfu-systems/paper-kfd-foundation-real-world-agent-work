@@ -16,7 +16,7 @@
   urlcolor=black
 }
 
-\title{Non-Drifting Facts, Inspectable Trust, and Trusted Value:\\
+\title{Facts, Trust, and Boundary Primitives:\\
 A Foundation Model for Real-World Agent Work}
 \author{Keren Dong\\Kungfu Origin Technology Limited\\\href{mailto:keren.dong@kungfu.link}{keren.dong@kungfu.link}}
 \date{Draft: July 2026}
@@ -26,22 +26,25 @@ A Foundation Model for Real-World Agent Work}
 \maketitle
 
 \begin{abstract}
-Agents are beginning to participate in long-lived work that touches local
-files, repositories, terminals, releases, user decisions, remote machines,
-traces, and product control surfaces. This changes the design problem from
-``how should software expose an interface to an agent?'' to ``how can humans
-and agents cooperate in real work without losing facts, trust, or
-responsibility?'' This paper proposes a compact foundation model for that
-problem: facts must not drift; trust must start from facts; cooperation must
-start from trusted value. The model is derived from the first three Kung Fu
-Decisions (KFD-1/2/3), but is presented here as a general design position for
-real-world agent work. We define the three layers, explain why their order is
-load-bearing, describe engineering surfaces that can make the model
-operational, and outline how the KFD package, Buildchain, and Kungfu can serve
-as evidence paths. The paper is an initial foundation and systems design draft:
-it argues that agent-era products need non-drifting fact sources, inspectable
-trust assessments, and transparent value surfaces before they can support
-durable cooperation between intelligent participants.
+Agents increasingly participate in work that outlives a conversation and
+crosses repositories, runtimes, releases, people, and machines. At these
+contact surfaces, coordination that once survived in human memory becomes a
+systems problem. This paper proposes a foundation model for that problem:
+facts must not drift; trust must start from facts; cooperation must start from
+trusted value. It then derives three procedures for declared perspective,
+human--agent primitive discovery, and autonomous discovery grounded in causal
+experience. The central systems hypothesis is that a strong primitive often
+emerges at a pressured boundary where participants previously depended on
+implicit translation, handoff, attribution, or responsibility. We examine
+three current cases: Xinfa Atlas between project reality and human/agent
+understanding, Kungfu Episode between agent action and real-world result, and
+Buildchain Release Passport between reviewed source and released artifacts.
+We show how Project Cut composes spatial, causal, material, and release facts
+without collapsing their authorities. Boundary pressure is treated as a
+diagnostic rather than proof; deletion, fuse, held-out, counterfactual, and
+independent-verifier tests remain necessary. The contribution is a falsifiable
+systems design and an implementation-backed research program, not a claim that
+the cases are already universal or historically important.
 \end{abstract}
 
 \input{sections/01-introduction}

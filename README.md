@@ -1,12 +1,13 @@
 # KFD Foundation for Real-World Agent Work
 
 This repository tracks the LaTeX source for a research paper on the KFD-1/2/3
-foundation model for real-world agent work.
+foundation, its KFD-4/5/6 derived procedures, and boundary-primitive discovery
+in real-world agent work.
 
 Working title:
 
 ```text
-Non-Drifting Facts, Inspectable Trust, and Trusted Value:
+Facts, Trust, and Boundary Primitives:
 A Foundation Model for Real-World Agent Work
 ```
 
@@ -19,9 +20,9 @@ KFD-3: cooperation must start from trusted value.
 ```
 
 The argument is broader than software interface design. It treats humans and
-agents as intelligent participants in real-world work, and studies how facts,
-trust, value, constraints, and reviewable records can form a practical
-foundation for cooperation in complex systems.
+agents as intelligent participants in real-world work, studies how facts,
+trust, value, constraints, and reviewable records support cooperation, and
+asks how reality pressure can reveal new load-bearing boundary objects.
 
 Publisher: Kungfu Origin Technology Limited.
 Contact: Keren Dong <keren.dong@kungfu.link>.
@@ -78,7 +79,7 @@ make check
 
 ## Status
 
-This is an initial draft repository. The argument is intentionally framed as a
-foundation and systems design paper with product evidence paths. Empirical and
-comparative claims should be strengthened with Buildchain, KFD package, and
-Kungfu implementation evidence before submission.
+This is a systems design draft with implementation-backed case studies. KFD-6
+and the autonomous discovery loop remain explicitly experimental. Historical,
+universal, and quantitative claims require independent evidence beyond the
+current Kungfu ecosystem before submission.
