@@ -14,7 +14,7 @@ on:
 
 jobs:
   paper-release:
-    uses: kungfu-systems/buildchain/.github/workflows/paper-release.yml@v2-alpha
+    uses: kungfu-systems/buildchain/.github/workflows/paper-release-sealed.yml@v2-alpha
     permissions:
       actions: read
       checks: write
@@ -24,7 +24,10 @@ jobs:
     with:
       buildchain-ref: ${{ inputs.buildchain-ref || '' }}
       buildchain-contract-lock-path: .buildchain/contract-lock.json
+      publisher-workflow-path: .github/workflows/paper-release.yml
       toolchain-type: config
       verify-command: make check
       artifact-name: paper-kfd-foundation-real-world-agent-work
+      artifact-paths: _build/kfd-foundation-model.pdf
+      github-release: true
       release-passport-product-name: KFD Foundation for Real-World Agent Work
