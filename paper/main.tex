@@ -9,6 +9,8 @@
 \usepackage{booktabs}
 \usepackage{amsmath}
 
+\setlength{\emergencystretch}{2em}
+
 \hypersetup{
   colorlinks=true,
   linkcolor=black,
@@ -16,8 +18,8 @@
   urlcolor=black
 }
 
-\title{Facts, Trust, and Boundary Primitives:\\
-A Foundation Model for Real-World Agent Work}
+\title{Facts, Trust, and Cooperation:\\
+The KFD Foundation Triad}
 \author{Keren Dong\\Kungfu Origin Technology Limited\\\href{mailto:keren.dong@kungfu.link}{keren.dong@kungfu.link}}
 \date{Draft: July 2026}
 
@@ -26,25 +28,24 @@ A Foundation Model for Real-World Agent Work}
 \maketitle
 
 \begin{abstract}
-Agents increasingly participate in work that outlives a conversation and
-crosses repositories, runtimes, releases, people, and machines. At these
-contact surfaces, coordination that once survived in human memory becomes a
-systems problem. This paper proposes a foundation model for that problem:
-facts must not drift; trust must start from facts; cooperation must start from
-trusted value. It then derives three procedures for declared perspective,
-human--agent primitive discovery, and autonomous discovery grounded in causal
-experience. The central systems hypothesis is that a strong primitive often
-emerges at a pressured boundary where participants previously depended on
-implicit translation, handoff, attribution, or responsibility. We examine
-three current cases: Xinfa Atlas between project reality and human/agent
-understanding, Kungfu Episode between agent action and real-world result, and
-Buildchain Release Passport between reviewed source and released artifacts.
-We show how Project Cut composes spatial, causal, material, and release facts
-without collapsing their authorities. Boundary pressure is treated as a
-diagnostic rather than proof; deletion, fuse, held-out, counterfactual, and
-independent-verifier tests remain necessary. The contribution is a falsifiable
-systems design and an implementation-backed research program, not a claim that
-the cases are already universal or historically important.
+Persistent work must remain intelligible across participants, tools, and time.
+That requirement is often described with desirable values such as truth,
+trust, and cooperation, but a list of values does not explain what makes a
+shared work world possible. This paper presents the first three Kung Fu
+Decisions (KFDs) as an ordered systems model rather than a code of conduct:
+facts must not drift; trust must start from facts; and cooperation must start
+from trusted value. The three decisions preserve, respectively, continuity of
+the work world, warranted reliance on that world, and the capacity of
+independent participants to generate further joint action. Their composition
+is recursive: cooperation produces new occurrences and consequences, which
+must become inspectable inputs to the next fact cut. We test the model through
+removal and order-inversion arguments and through one cross-session
+continuation case. We then show how declared perspective, governed primitive
+discovery, and causal experience arise as the first pressures on this
+foundation, providing a narrow bridge to KFD-4, KFD-5, and the draft KFD-6.
+The contribution is a falsifiable account of the minimal roles required for a
+durable cooperative world, not a claim of complete ontology, moral consensus,
+or universal sufficiency.
 \end{abstract}
 
 \input{sections/01-introduction}

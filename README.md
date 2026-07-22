@@ -1,14 +1,14 @@
 # KFD Foundation for Real-World Agent Work
 
-This repository tracks the LaTeX source for a research paper on the KFD-1/2/3
-foundation, its KFD-4/5/6 derived procedures, and boundary-primitive discovery
-in real-world agent work.
+This repository tracks the LaTeX source for a research paper on KFD-1/2/3 as
+the minimal recursive foundation for persistent cooperative work. KFD-4/5/6
+appear only as a narrow derived frontier and route into companion papers.
 
 Working title:
 
 ```text
-Facts, Trust, and Boundary Primitives:
-A Foundation Model for Real-World Agent Work
+Facts, Trust, and Cooperation:
+The KFD Foundation Triad
 ```
 
 The paper studies the foundation triad behind KFD:
@@ -19,10 +19,20 @@ KFD-2: trust must start from facts.
 KFD-3: cooperation must start from trusted value.
 ```
 
-The argument is broader than software interface design. It treats humans and
-agents as intelligent participants in real-world work, studies how facts,
-trust, value, constraints, and reviewable records support cooperation, and
-asks how reality pressure can reveal new load-bearing boundary objects.
+The paper treats the triad as a systems model rather than a code of conduct.
+KFD-1 preserves continuity of the shared work world, KFD-2 turns facts into
+bounded and revisable permission to rely, and KFD-3 turns trusted value into
+coordinated action among independent participants. Cooperation produces new
+occurrences, which return through review to the next fact cut:
+
+```text
+Facts -> Trust -> Cooperation -> New Facts
+```
+
+The paper tests the triad through removal and order-inversion arguments and a
+single cross-session continuation case. Primitive discovery and the wider KFD
+architecture are intentionally left to the Observer and Episodes companion
+papers.
 
 Publisher: Kungfu Origin Technology Limited.
 Contact: Keren Dong <keren.dong@kungfu.link>.
@@ -79,7 +89,8 @@ make check
 
 ## Status
 
-This is a systems design draft with implementation-backed case studies. KFD-6
-and the autonomous discovery loop remain explicitly experimental. Historical,
-universal, and quantitative claims require independent evidence beyond the
-current Kungfu ecosystem before submission.
+This is an alpha systems paper. It proposes that the triad names three
+non-redundant roles required for a durable cooperative world; it does not claim
+a complete ontology, moral consensus, or universal sufficiency. KFD-6 remains
+draft, and cross-domain or quantitative claims require independent evidence
+beyond the current Kungfu ecosystem.

@@ -1,24 +1,22 @@
 \section{Introduction}
 
-Software systems have long crossed boundaries: source becomes an artifact,
-events become state, and local observations become shared decisions. Much of
-the coordination at those boundaries has remained implicit. A maintainer
-remembers why a release is trustworthy. A worker reconstructs which facts a
-handoff meant. A user infers whether a successful command implies durability.
-When the participants are few and the environment is stable, this invisible
-work can be absorbed by human memory and convention.
+A conversation can end while the work continues. A maintainer leaves, an
+agent process stops, a repository moves, a release is promoted, or a new
+participant arrives with no access to the private context that made the last
+decision seem obvious. If the work is to survive, the newcomer must recover
+more than a summary. The newcomer must be able to identify what happened,
+decide which claims may be relied upon, and determine whether and how to
+continue.
 
-Agents change the pressure on those boundaries. They can act across many
-repositories, tools, machines, and time spans, but they do not inherit the
-unstated context that made an old process work. Humans, meanwhile, cannot
-continuously reconstruct every action, artifact, fact source, and residual
-risk produced at agent speed. The resulting problem is not only how to expose
-an API to an agent. It is how to build a shared work world in which humans and
-agents can recover what happened, decide what to trust, and cooperate without
-hidden control.
+This is a systems problem before it is an interface problem. Better models,
+larger context windows, and more persuasive explanations do not by themselves
+preserve the identity of the work across time. Nor does a complete event log
+automatically tell a participant what a claim proves or why cooperation is
+worth entering. Persistent work needs a shared world that can outlive the
+participant who currently interprets it.
 
-This paper starts from a compact foundation published as the first three Kung
-Fu Decisions (KFDs) \cite{kfd2026alpha25}:
+The first three Kung Fu Decisions (KFDs) state a compact foundation for that
+world \cite{kfd2026alpha42}:
 
 \begin{quote}
 KFD-1: facts must not drift.\\
@@ -26,62 +24,56 @@ KFD-2: trust must start from facts.\\
 KFD-3: cooperation must start from trusted value.
 \end{quote}
 
-The three statements form an ordered model rather than an independent list.
-Non-drifting facts make claims inspectable. Inspectable claims make value
-trustable. Trusted value makes durable cooperation possible. Later KFDs derive
-procedures from that foundation: KFD-4 requires perspective-bearing timelines
-to declare their observer; KFD-5 joins grounded judgment with scalable
-reasoning to discover primitives; and the draft KFD-6 asks whether agents can
-perform more of that discovery from causal experience without certifying their
-own output.
+Read as three imperatives, the statements can sound like good advice. This
+paper advances a stronger and more falsifiable interpretation: they name three
+different roles that persistent cooperation cannot collapse into one another.
+KFD-1 preserves the continuity of the world about which participants reason.
+KFD-2 converts parts of that world into bounded permission to rely. KFD-3
+converts warranted reliance and visible value into coordinated action among
+participants who retain independent judgment.
 
-The central systems hypothesis developed here is:
+The dependency is ordered, but its operation is recursive:
 
-\begin{quote}
-A strong primitive often appears at a contact surface that was handled
-implicitly until a new participant or new scale made its coordination cost
-load-bearing.
-\end{quote}
+\begin{equation}
+\text{facts} \rightarrow \text{trust} \rightarrow \text{cooperation}
+\rightarrow \text{new occurrences} \rightarrow \text{successor facts}.
+\label{eq:intro-loop}
+\end{equation}
 
-Such a primitive does not merely describe one side of a system. It mediates a
-boundary: translation, handoff, attribution, authority, responsibility, or
-recovery becomes a stable object that software can identify and inspect. This
-idea is related to boundary objects in sociology \cite{star1989boundary}, but
-the focus here is an engineering gate for promoting a candidate into a
-first-class identity with lifecycle, authority, operations, and falsifiers.
+This loop is the paper's central object. It explains why the triad can be
+foundational without being a complete ontology. The three KFDs do not name
+every object a cooperative system will need. They preserve the conditions
+under which new action can occur, its consequences can correct the shared
+world, and missing objects can later be discovered without replacing reality
+with narrative.
 
-We study three current cases. A \emph{Xinfa Atlas} sits between project reality
-and human/agent understanding. A \emph{Kungfu Episode} sits between agent
-action and real-world result. A \emph{Buildchain Release Passport} sits
-between reviewed source/build activity and the artifact world that users
-receive. Each previously depended on a human reconstructing an implicit
-boundary. Each now has, at a different maturity level, a named identity and
-machine-readable evidence surface.
-
-This paper makes five contributions:
+The paper makes four contributions:
 
 \begin{itemize}[leftmargin=*]
-  \item an ordered foundation for facts, trust, and cooperation in real-world
-        agent work;
-  \item a derived primitive-discovery procedure in which boundary pressure is
-        a strong but non-exclusive diagnostic;
-  \item a comparative analysis of Atlas, Episode, and Release Passport as
-        boundary-primitive candidates;
-  \item a composition model using Project Cut to keep material, epistemic,
-        causal, and release authorities separate while binding them; and
-  \item a falsifiable evaluation program based on deletion, fuse, recovery,
-        held-out, counterfactual, and independent-verifier tests.
+  \item it defines facts, trust, and cooperation as operational roles rather
+        than moral qualities;
+  \item it uses removal and order-inversion tests to explain why the roles are
+        separately necessary and directionally dependent;
+  \item it models the triad as a recursive kernel through which a shared work
+        world persists, becomes actionable, and produces further evidence;
+        and
+  \item it derives a narrow frontier from that kernel: declared perspective
+        in KFD-4, separated genesis and qualification in KFD-5, and the
+        causal-experience gate in the draft KFD-6.
 \end{itemize}
 
-The claims are deliberately bounded. The paper does not claim that every
-boundary needs a primitive, that the three cases are universally applicable,
-or that their historical importance is established. KFD-6 remains a draft
-experiment. The contribution is a systems design with inspectable
-implementation evidence and explicit conditions under which its stronger
-claims should be rejected.
+The claims remain bounded. The paper does not prove that the triad is a
+mathematically unique basis for every social or technical system. It does not
+equate recorded claims with objective reality, trust with certainty, or
+cooperation with agreement. It argues that any system claiming durable
+cooperation must implement equivalent roles or explain how it preserves the
+same continuity, warranted reliance, and generative coordination without
+them.
 
-Section~\ref{sec:problem} defines the boundary problem. Section~\ref{sec:foundation}
-presents the foundation. Section~\ref{sec:operationalization} derives the
-discovery procedures. Section~\ref{sec:evidence} compares the three cases.
-Section~\ref{sec:evaluation} gives the composition and evaluation model.
-Sections~\ref{sec:related} and~\ref{sec:discussion} relate and bound the work.
+Section~\ref{sec:problem} defines the continuity problem.
+Section~\ref{sec:foundation} specifies the three roles.
+Section~\ref{sec:necessity} applies removal and order tests.
+Section~\ref{sec:kernel} develops the recursive model and a cross-session
+case. Section~\ref{sec:frontier} shows how KFD-4/5/6 arise at the first
+pressure frontier. Sections~\ref{sec:related} and~\ref{sec:discussion}
+position and bound the claim.
