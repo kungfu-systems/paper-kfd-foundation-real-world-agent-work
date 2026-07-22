@@ -1,119 +1,95 @@
-\section{Derived Procedures for Primitive Discovery}
-\label{sec:operationalization}
+\section{Necessity and Order}
+\label{sec:necessity}
 
-The foundation says what must remain true. The derived procedures say how to
-act when perspective and discovery become load-bearing.
+The triad is a foundation only if each role carries independent load and if
+later roles cannot safely manufacture their own earlier conditions. We apply
+two conceptual tests: removal and order inversion.
 
-\subsection{KFD-4: declare the observer}
+\subsection{Removal tests}
 
-Real-world work combines facts from machines, agents, repositories, and
-external systems. A mixed-source timeline is not an absolute view from
-nowhere. KFD-4 requires a perspective-bearing view to declare the observer,
-accepted sources and ranges, projection policy, causal constraints,
-deterministic tie-breakers, freshness, and degraded state.
+\paragraph{Remove KFD-1.}
+Suppose a system retains trust assessments and cooperation records but does
+not preserve stable fact identities and change boundaries. A later participant
+cannot determine whether an assessment still refers to the same contract,
+artifact, occurrence, or meaning. Trust attaches to a moving object. Conflict
+is resolved by the latest narrative or strongest authority because no stable
+reference remains against which either can be challenged.
 
-This does not make facts relative. Source-local records, provenance, causal
-links, hashes, and receipts remain load-bearing. The projection is relative to
-an observer and evidence cut. Known causality must dominate presentation
-policy; missing evidence should degrade the view rather than be hidden behind
-wall-clock sorting. The procedure follows distributed-systems results that
-reject a single physical clock as sufficient causal authority
-\cite{lamport1978time}.
+\paragraph{Remove KFD-2.}
+Suppose facts are stable and participants are willing to cooperate, but no
+purpose-bound assessment connects facts to reliance. Every participant must
+either repeat the complete verification, accept another participant's
+reputation, or act without knowing which gap matters. The archive may be
+excellent, but reliance does not scale. Stable facts are necessary evidence;
+they are not self-interpreting permission to act.
 
-KFD-4 is necessary for primitive discovery because the pressure itself is
-observed from somewhere. Two investigations may honestly reach different
-conclusions when their cuts, values, or operating boundaries differ. The
-observer declaration makes that disagreement inspectable rather than
-silently universalizing one view.
+\paragraph{Remove KFD-3.}
+Suppose facts and assessments are inspectable, but the system has no account of
+participant value, choice, or visible constraint. It can support audit,
+certification, and command execution. It cannot distinguish durable
+cooperation from compliance obtained by monopoly, hidden workflow capture, or
+unreviewable pressure. The world may be correct and trustworthy yet remain
+non-generative across independent participants.
 
-\subsection{KFD-5: couple grounded judgment and scalable reasoning}
+The failure modes are summarized in Table~\ref{tab:removal}.
 
-KFD-5 defines the current executable discovery form. Grounded judgment
-contributes contact with consequences, value, and the ability to notice that a
-recurring burden matters. Scalable reasoning contributes search, comparison,
-reconstruction, formalization, counterexample generation, and verification.
-Humans and agents commonly supply these functions respectively, but the
-functions are not permanent species boundaries.
+\begin{table}[ht]
+\centering
+\small
+\begin{tabular}{p{0.18\linewidth}p{0.31\linewidth}p{0.38\linewidth}}
+\toprule
+Removed role & What remains & Structural failure \\
+\midrule
+Stable facts & trust language and coordination & reliance binds to mutable
+narrative or authority \\
+Warranted trust & records and willing action & repeated verification, blind
+reliance, or reputation substitution \\
+Trusted-value cooperation & facts and assessment & accountable control may
+remain, but independent joint generation collapses into compliance \\
+\bottomrule
+\end{tabular}
+\caption{Removal tests for the three foundation roles.}
+\label{tab:removal}
+\end{table}
 
-A candidate record preserves the following chain:
+These tests establish functional non-redundancy, not mathematical uniqueness.
+Another vocabulary may implement equivalent roles. The KFD claim is that the
+capabilities themselves cannot be omitted from durable cooperation.
 
-\begin{enumerate}[leftmargin=*]
-  \item ground a recurring burden in a declared evidence cut;
-  \item bind sources, observers, gaps, and responsibility;
-  \item generate candidates without privileging the first coherent name;
-  \item compare prior art, narrower abstractions, and doing nothing;
-  \item demand minimum identity, boundary, authority, lifecycle, and
-        operations;
-  \item run deletion and fuse tests;
-  \item declare evidence that would reject, narrow, subsume, or reopen the
-        candidate;
-  \item dogfood it under load; and
-  \item record accepted, provisional, rejected, or subsumed as valid outcomes.
-\end{enumerate}
+\subsection{Order-inversion failures}
 
-The \emph{deletion test} asks whether removing the candidate forces
-participants to reconstruct the same missing coordination. The \emph{fuse
-test} asks whether mechanisms that previously appeared separate become one
-more economical system when the object exists. Neither test proves a
-primitive; both expose whether the name carries independent explanatory and
-operational load.
+The arrows in the triad describe dependency, not a rigid wall-clock sequence.
+Participants may gather evidence, negotiate value, and act in overlapping
+cycles. Nevertheless, a later layer may not retroactively create the basis on
+which it claims to stand.
 
-\subsection{Boundary pressure as a diagnostic}
+\paragraph{Trust before facts.}
+When a system asks for reliance before exposing the relevant facts, identity,
+reputation, confidence, or persuasive narrative becomes the substitute. Facts
+may later be selected to defend the trust already granted. Correction then
+requires defeating an authority relationship rather than updating an
+assessment.
 
-When the implicit-boundary pattern is present, the discovery record can add:
+\paragraph{Cooperation before trustable value.}
+When a system asks for commitment before value, facts, choices, and
+constraints can be inspected, participation becomes the evidence that the
+offer was acceptable. Lock-in is misread as preference and compliance as
+agreement. The system can grow while losing the ability to learn why
+participants would have chosen differently.
 
-\begin{equation}
-B_X = (L, H, \Delta P, \Phi, M_X, N),
-\end{equation}
+\paragraph{Successor facts admitted by the action that needs them.}
+When completed action is allowed to rewrite its own prior fact cut, a result
+can erase failed attempts, costs, reversals, or disconfirming evidence. The
+loop becomes self-certifying: success defines which history counts. KFD-1
+therefore applies again when new occurrences are admitted into the successor
+world.
 
-where $L$ names the contact sides, $H$ the previous implicit mechanism,
-$\Delta P$ the pressure change, $\Phi$ recurring failures, $M_X$ the
-candidate's mediation claim, and $N$ a narrower internal-object alternative.
+\subsection{Necessary, not sufficient}
 
-The hypothesis gains support when the candidate makes translation, handoff,
-attribution, authority, or responsibility stable and inspectable; deletion
-recreates the old burden; and the narrower alternative fails to explain the
-same evidence at lower cost. It loses support when an internal model, policy,
-label, or local abstraction removes the friction without exporting a new
-identity.
-
-Boundary pressure is optional and non-exclusive. A valid primitive may be
-discovered through another grounded mechanism, and a heavily pressured
-boundary may require no new primitive. This asymmetry protects the framework
-from becoming a universal naming machine.
-
-\subsection{KFD-6: autonomous discovery without self-certification}
-
-The draft KFD-6 asks whether sufficiently rich causal experience can let an
-agent perform more of the discovery step without a human translating every
-reality pressure. An experience corpus may include observations, choices,
-actions, dependencies, outcomes, costs, failures, retries, overrides, and
-receipts connected by causal links. It remains a projection of reality, not
-reality itself.
-
-An autonomous loop must declare corpus and observer cuts, missing evidence,
-selection and instrumentation bias, the boundary hypothesis, held-out
-evaluation evidence, bounded intervention authority, and a separate promotion
-authority. The generator cannot be its sole verifier, and generated examples
-cannot satisfy the evidence gate. The intended loop is:
-
-\begin{equation}
-\mathrm{Atlas}_n \rightarrow \text{action} \rightarrow \text{Episodes}
-\rightarrow \text{boundary pressure} \rightarrow \text{candidate}
-\rightarrow \mathrm{Atlas}_{n+1}.
-\end{equation}
-
-KFD-6 remains draft until a real implementation beats retrieval or
-summarization baselines, rejects attractive false candidates, transfers a
-candidate across contexts, preserves disconfirming evidence, and leaves an
-auditable path from corpus cut to promotion decision. Failure is evidence
-against activation, not a reason to weaken the gate.
-
-\subsection{Promotion rule}
-
-Discovery and promotion are distinct authorities. A candidate may validate a
-schema, explain prior cases, or be proposed by an agent without becoming
-load-bearing. Promotion should be proportional to consequence and supported
-by independent evidence. This separation applies KFD-2 to the discovery
-procedure itself and prevents a coherent loop from manufacturing its own
-trust.
+The triad does not guarantee good outcomes. Facts may be incomplete, an
+assessment mistaken, visible choices economically unequal, or cooperation
+harmful to others outside the declared boundary. Domain knowledge, ethics,
+law, security, governance, and empirical correction remain necessary. The
+foundation claim is narrower: without continuity of fact, warranted reliance,
+and participant-aware coordination, those additional mechanisms cannot form a
+durable shared work world.

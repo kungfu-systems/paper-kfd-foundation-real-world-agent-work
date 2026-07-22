@@ -1,90 +1,81 @@
-\section{Problem: Implicit Boundaries Under Agent Pressure}
+\section{The Continuity Problem}
 \label{sec:problem}
 
-\subsection{Real-world agent work}
+\subsection{An operational shared world}
 
-We use \emph{real-world agent work} for persistent work in which agent output
-can change or support decisions about concrete artifacts, responsibilities, or
-external state. Examples include repository changes, builds, package releases,
-remote operations, long-running tasks, runtime traces, user approvals, and
-recovery after interruption. The work spans several kinds of state:
+We use \emph{shared work world} in a deliberately operational sense. It is the
+recoverable set of facts, claims, artifacts, actions, responsibilities,
+constraints, and open questions through which participants identify and
+continue the same work. It is not a metaphysical claim that a system captures
+all of reality. A shared work world is sufficient when relevant participants
+can locate its authority boundaries, inspect what is known and unknown, and
+connect later action to earlier consequence.
+
+This world is distributed. Material state may live in repositories and
+artifacts; causal state in runtime records and receipts; epistemic state in
+claims, evidence, and gaps; responsibility state in permissions and
+commitments. No participant directly observes the whole. Distributed
+cognition has long treated thinking as organized across people, artifacts,
+and environments rather than contained in one head
+\cite{hutchins1995cognition}. Agents increase both the reach of that system
+and the cost of leaving its coordination implicit.
+
+The persistence requirement can be stated as follows. Given participants
+$p_i$ and $p_j$ separated by time, tool, organization, or perspective, $p_j$
+should be able to continue the work without requiring the private memory of
+$p_i$ and without silently inventing a new authoritative world. Perfect
+reconstruction is not required. Missing evidence, ambiguity, and disagreement
+may remain, but they must remain visible as such.
+
+\subsection{Three transformations}
+
+Persistent cooperation repeatedly performs three transformations:
+
+\begin{enumerate}[leftmargin=*]
+  \item occurrences, observations, and state become retained facts;
+  \item retained facts become warranted reliance on a bounded claim; and
+  \item warranted reliance and visible value become coordinated action.
+\end{enumerate}
+
+Each transformation can fail independently. Records can change meaning while
+keeping the same name. Evidence can exist without establishing the claim for
+which it is cited. A correct claim can be used to obtain compliance through a
+hidden constraint rather than cooperation. Treating the three transformations
+as one generic notion of ``trustworthiness'' conceals these different failure
+modes.
+
+The transformations are also lossy. A fact cut selects from reality. A trust
+assessment selects facts relevant to a purpose. A cooperation decision
+selects one action from available choices. A durable system does not eliminate
+that loss; it declares the cut, purpose, residual uncertainty, choice, and
+responsibility through which the loss occurred.
+
+\subsection{A running case: work after the session}
+
+Consider a task performed through an agent session. The agent edits source,
+runs checks, encounters one unresolved failure, and then the session ends.
+Three weak continuations are common:
 
 \begin{itemize}[leftmargin=*]
-  \item material state such as source trees, binaries, and documents;
-  \item runtime state such as actions, observations, receipts, and failures;
-  \item epistemic state such as claims, evidence, gaps, and current decisions;
-  \item responsibility state such as purpose, authority, ownership, and next
-        action; and
-  \item presentation state exposed through human and agent interfaces.
+  \item the transcript is treated as the work, although authoritative files
+        and external state may differ from its narrative;
+  \item a summary says the task is complete, but does not expose the evidence
+        cut, failed check, or residual responsibility; or
+  \item a new agent is instructed to continue, but cannot inspect why the next
+        action is valuable or which constraints govern it.
 \end{itemize}
 
-No participant sees this entire world directly. Work therefore depends on
-representations and handoffs. Distributed cognition already treats cognition
-as spread across people and artifacts rather than contained in one head
-\cite{hutchins1995cognition}; agent participation increases both the capacity
-and the coordination burden of that system.
+The resulting failure is not merely lost context. The shared world has become
+dependent on private reconstruction. Kungfu's product thesis that the session
+is not the work is one practical response to this continuity problem
+\cite{kungfuWhitePaper2026}. The KFD question is more basic: what must remain
+true for any response to work?
 
-\subsection{The implicit-boundary pattern}
+\subsection{Why a value list is insufficient}
 
-Let a contact surface be a relation between at least two sides $L=\{l_1,
-l_2,\ldots\}$ whose outputs, interpretations, or authorities must meet. Before
-the surface becomes load-bearing, coordination may be provided by an implicit
-mechanism $H$: memory, convention, reputation, a private prompt, a maintainer's
-interpretation, or manual reconstruction.
-
-Pressure changes when a new participant, larger scale, higher frequency,
-stronger authority, greater heterogeneity, lower latency tolerance, or larger
-consequence enters the system. We denote that change by $\Delta P$. Recurrent
-failures $\Phi$ then become visible: translation mistakes, incomplete
-handoffs, lost attribution, ambiguous authority, repeated reconstruction, or
-unowned responsibility.
-
-The boundary problem can be summarized as:
-
-\begin{equation}
-(L, H, \Delta P) \longrightarrow \Phi .
-\end{equation}
-
-A primitive candidate $X$ proposes to mediate that surface. It has value only
-if it turns part of the old implicit mechanism into a stable, inspectable
-object without hiding the responsibility it replaces:
-
-\begin{equation}
-X = (I, B, A, Y, O),
-\end{equation}
-
-where $I$ is identity, $B$ is boundary, $A$ is authority, $Y$ is lifecycle,
-and $O$ is the minimum useful operation set.
-
-\subsection{Three failure classes}
-
-\paragraph{Fact drift.}
-The same load-bearing fact appears differently in source configuration,
-packaged artifacts, documentation, UI defaults, CLI output, schemas, and
-runtime behavior. An agent may read one surface, a human another, and the
-runtime enforce a third. More intelligence then accelerates disagreement
-instead of resolving it.
-
-\paragraph{Trust by reconstruction.}
-A release, task completion, runtime state, or plugin is called trustworthy,
-but the supporting facts, evidence cut, residual risk, and responsibility
-boundary are unavailable. The recipient must trust authority or repeat the
-maintainer's reconstruction. Provenance systems reduce this cost for software
-artifacts \cite{slsa,intoto2019}; real-world agent work creates the same need
-across action and knowledge boundaries.
-
-\paragraph{Cooperation by capture.}
-A product may force participants into a managed workflow, conceal constraints,
-or make alternative paths impractical. This can produce compliance while
-destroying the participant's ability to inspect value, challenge a claim, or
-recover independently. For agents, a private prompt can become the only
-interface; for humans, a GUI can become the only place where state appears.
-
-\subsection{Why friction alone is insufficient}
-
-Not every recurring problem deserves a new primitive. The failure may be a bug,
-an absent policy, a local abstraction, poor documentation, or a narrow internal
-model. Naming a false primitive exports complexity to every consumer. A valid
-discovery method must therefore preserve the no-new-primitive alternative and
-ask whether deleting the candidate recreates the same coordination burden.
-Boundary pressure generates candidates; it does not certify them.
+Truthfulness, trust, and collaboration are widely desirable. Their desirability
+does not establish architectural necessity. A foundation claim requires
+counterfactual force: remove one role and identify a capability the remaining
+system can no longer provide; reverse their dependency and identify the
+unstable substitute that appears. The next sections therefore treat the triad
+as a candidate minimal kernel and subject it to those tests.
