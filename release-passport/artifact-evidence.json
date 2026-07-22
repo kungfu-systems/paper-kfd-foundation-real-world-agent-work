@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "contract": "kungfu-buildchain-artifact-evidence",
+  "repository": "kungfu-systems/paper-kfd-foundation-real-world-agent-work",
+  "release": {
+    "tag": "v0.1.0-alpha.8",
+    "sourceSha": "bc79692260c781cd4e1c67662d5cfdde4d2b390d"
+  },
+  "generatedAt": "2026-07-22T14:47:49.024Z",
+  "runner": {
+    "kind": "github-hosted",
+    "os": "Linux",
+    "arch": "X64",
+    "labels": [],
+    "image": "ubuntu24"
+  },
+  "workflow": {
+    "name": "Paper Release",
+    "runId": "29930165509",
+    "runAttempt": "1",
+    "url": "https://github.com/kungfu-systems/paper-kfd-foundation-real-world-agent-work/actions/runs/29930165509"
+  },
+  "artifacts": []
+}
