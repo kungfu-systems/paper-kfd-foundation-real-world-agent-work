@@ -1,7 +1,7 @@
 {
   "name": "@kungfu-tech/paper-kfd-foundation-real-world-agent-work",
   "private": true,
-  "description": "Source repository for the KFD foundation paper on real-world agent work",
+  "description": "Source repository for the paper Facts, Trust, and Cooperation: The KFD Foundation Triad",
   "license": "Apache-2.0",
   "repository": {
     "type": "git",

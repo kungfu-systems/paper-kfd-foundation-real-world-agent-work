@@ -1,95 +1,122 @@
-\section{The Foundation: Facts, Trust, and Cooperation}
+\section{The Foundation Triad}
 \label{sec:foundation}
 
-KFD-1/2/3 form the foundation of the model. Their order is load-bearing, and
-their scope is more general than any single implementation schema.
+\subsection{KFD-1: continuity of the fact world}
 
-\subsection{KFD-1: facts must not drift}
+KFD-1 states that facts must not drift. A \emph{fact} here is not whatever a
+system happens to store, nor a claim of observer-free certainty. It is a
+load-bearing reference admitted from a declared source, authority, and
+evidence boundary. KFD distinguishes a \emph{fact cut}, which states what
+holds at such a boundary, from a \emph{causal record}, which states what
+occurred between declared boundaries \cite{kfd2026alpha42}. Either may include
+known gaps, uncertainty, or conflicting evidence.
 
-A \emph{contract world} is the set of surfaces to which another participant
-can weld at integration time or across time: schemas, ABIs, configuration
-semantics, CLI behavior, persisted records, release channels, and public
-document routes. Let $W$ identify a declared contract world, $F_W$ its fact
-source, and $c$ its explicit compatibility boundary. KFD-1 requires:
-
-\begin{equation}
-W_t = W_{t'} \land c_t = c_{t'} \Longrightarrow
-\operatorname{meaning}(F_{W,t}) = \operatorname{meaning}(F_{W,t'}).
-\end{equation}
-
-The equation does not freeze a system forever. It says that semantic change
-must cross a declared boundary instead of silently reusing the same coordinate.
-The practical mechanism is a welded-surface register and a final-diff
-classification: breaking, additive, no registered-surface impact, or
-unclassifiable. Unclassifiable means the register is deficient; it is not
-permission to guess.
-
-KFD-1 is therefore an ontology for load-bearing facts. A fact is not made
-stable merely because it is written in JSON or committed to Git. Its source,
-meaning, consumer weld, and change boundary must be declared.
-
-\subsection{KFD-2: trust must start from facts}
-
-Trust is not a property attached to an object in the abstract. It is an
-assessment of a claim $C$ for a purpose $P$ over a fact and evidence cut. We
-model a trust assessment as:
+Let $F_t$ be a fact cut used at time $t$, and let $c$ be its declared
+compatibility boundary. If the system presents the same fact identity and
+boundary at $t'$ without declaring a change, its load-bearing meaning must be
+preserved:
 
 \begin{equation}
-T = \mathcal{A}(C, P, F, E, R, Q),
+\operatorname{id}(F_t)=\operatorname{id}(F_{t'}) \land c_t=c_{t'}
+\Longrightarrow
+\operatorname{meaning}(F_t)=\operatorname{meaning}(F_{t'}).
+\label{eq:fact-continuity}
 \end{equation}
 
-where $F$ is the pinned fact set, $E$ the checked evidence, $R$ residual risk,
-and $Q$ the responsibility assignment for source, verification, and decision.
-The result is not necessarily binary; pass, warning, fail, and unverifiable
-are useful distinct outcomes.
+The invariant does not freeze the world. It requires semantic change to cross
+an explicit boundary so later evidence can contradict, supersede, or narrow an
+earlier model without silently rewriting what the earlier participant saw.
 
-KFD-2 prevents a summary, successful command, agent self-report, or maintainer
-reputation from silently becoming proof. The same structure can assess a
-release, configuration, API, timeline, collaboration interface, runtime fact,
-or completion claim. Local and exportable evidence is preferred where the
-system can capture it, because a cloud control surface should not become the
-only place where operational truth exists.
+KFD-1 therefore provides \emph{world continuity}. It lets two participants
+refer to the same admitted state or occurrence even when they disagree about
+its interpretation. Without such a reference, disagreement cannot reliably
+be distinguished from drift in the object being discussed.
 
-\subsection{KFD-3: cooperation must start from trusted value}
+\subsection{KFD-2: warranted reliance}
 
-Facts and trust do not automatically produce cooperation. A system can expose
-correct evidence while still using hidden constraints or forced workflow
-capture. KFD-3 requires an intelligent participant to be able to inspect the
-offered value, its factual basis, the available choices, and the applicable
-constraints before cooperation is requested.
+KFD-2 states that trust must start from facts. Trust is not modeled as a
+global property of a person, model, product, or artifact. It is a bounded
+permission to rely on a claim for a purpose.
 
-Let $V$ be a value claim, $T(V)$ its trust assessment, $K$ the visible
-constraints, and $O$ the available options. Cooperation is durable only when
-these are exposed to the participant:
+For claim $C$ and purpose $P$, a trust assessment can be represented as:
 
 \begin{equation}
-\operatorname{Cooperate} = g(V, T(V), K, O, \text{record}).
+T_P(C)=\mathcal{A}(C,P,F,E,R,Q),
+\label{eq:trust-assessment}
 \end{equation}
 
-This is not a rejection of strong constraints. Sandboxes, permissions,
-revocation, and refusals remain necessary. KFD-3 rejects constraints whose
-operation or justification is hidden from the reasoning participant. A human
-may prefer a GUI and an agent structured data, but neither should receive a
-weaker truth world.
+where $F$ is the bound fact cut, $E$ the checked evidence, $R$ residual risk,
+and $Q$ the assignment of source, verification, and decision responsibility.
+The result may be pass, warning, fail, or unverifiable. Its force is limited to
+the stated purpose and cut.
 
-\subsection{The ordered chain}
+This definition explains why more data is not the same as more trust. A log
+may be authentic while irrelevant to a completion claim. A check may pass
+while omitting the platform a consumer uses. A capable agent may produce a
+persuasive explanation without exposing the facts that would let another
+participant challenge it. KFD-2 makes reliance revisable because contrary
+facts can change the assessment without first defeating the authority or
+reputation of the claimant.
 
-The foundation is:
+KFD-2 therefore provides \emph{judgment continuity}. It allows a later
+participant to recover not only what was claimed, but why and within what
+boundary the claim was permitted to guide action.
+
+\subsection{KFD-3: generative coordination}
+
+KFD-3 states that cooperation must start from trusted value. Facts and trust
+do not themselves create joint action. A system may expose accurate evidence
+while hiding the value exchange, available alternatives, or constraints under
+which participation is requested.
+
+Let $V$ be a participant-relevant value claim, $T(V)$ its trust assessment,
+$K$ the visible constraints, and $O$ the meaningful available options. A
+cooperation decision has the form:
 
 \begin{equation}
-\text{non-drifting facts}
-\rightarrow \text{inspectable trust}
-\rightarrow \text{trusted value}
-\rightarrow \text{cooperation}
-\rightarrow \text{reviewable record}.
+C = \mathcal{C}(V,T(V),K,O,Q_C),
+\label{eq:cooperation}
 \end{equation}
 
-If KFD-1 fails, trust binds to unstable facts. If KFD-2 fails, value rests on
-uninspectable claims. If KFD-3 fails, a factually correct system can still
-obtain compliance by capture. The reviewable record feeds later fact and trust
-assessment, making the chain capable of self-correction.
+where $Q_C$ declares responsibility for the commitment and resulting action.
+The participant need not agree with every other participant. It must be able
+to understand what is offered, what is constrained, and what accepting,
+rejecting, escalating, or withdrawing means within the declared boundary.
 
-KFD-4/5/6 do not enlarge this foundation with unrelated axioms. They are
-procedures for applying it to perspective, primitive discovery, and autonomous
-learning. That distinction keeps the foundation compact while allowing the
-system to grow operationally.
+This is not an absence-of-control rule. Sandboxes, permissions, refusal,
+revocation, and hard safety gates may be necessary. KFD-3 distinguishes
+explainable, reviewable constraint from hidden capture, and cooperation from
+mere compliance. The distinction matters operationally: a compliant component
+executes inside one authority; a cooperating participant can contribute new
+facts, objections, alternatives, and commitments to a shared world.
+
+KFD-3 therefore provides \emph{action continuity}. It lets independent
+participants extend the work without surrendering the fact and judgment
+boundaries that made the extension trustworthy.
+
+\subsection{Three irreducible questions}
+
+The triad can be summarized by three questions:
+
+\begin{table}[ht]
+\centering
+\small
+\begin{tabular}{p{0.15\linewidth}p{0.24\linewidth}p{0.48\linewidth}}
+\toprule
+Layer & Role & Question preserved across participants and time \\
+\midrule
+KFD-1 & World continuity & What state or occurrence are we talking about, and
+where may its meaning change? \\
+KFD-2 & Judgment continuity & Why may this claim be relied upon for this
+purpose, and what remains unproved? \\
+KFD-3 & Action continuity & Why and within what visible choices and constraints
+should independent participants act together? \\
+\bottomrule
+\end{tabular}
+\caption{The three operational roles of the Foundation Triad.}
+\label{tab:triad-roles}
+\end{table}
+
+The roles correspond to reality as admitted, belief as warranted, and action
+as coordinated. They are related but not interchangeable. That separation is
+what makes the foundation testable.

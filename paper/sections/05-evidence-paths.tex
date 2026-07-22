@@ -1,134 +1,89 @@
-\section{Three Boundary-Primitive Cases}
-\label{sec:evidence}
+\section{The Recursive Kernel}
+\label{sec:kernel}
 
-The three cases in this section arose in different subsystems and have
-different maturity. Their common feature is not that they record data. Each
-names a contact surface where participants previously relied on implicit human
-coordination.
+The ordered triad becomes a world-building mechanism only when it closes the
+loop from current facts through action to successor facts.
 
-\begin{table}[ht]
-\centering
-\small
-\begin{tabular}{p{0.16\linewidth}p{0.30\linewidth}p{0.38\linewidth}}
-\toprule
-Candidate & Contact surface & Implicit mechanism replaced \\
-\midrule
-Xinfa Atlas & project reality $\leftrightarrow$ human/agent understanding &
-Repeated repository interpretation, private prompts, hand-written summaries,
-and divergent human/agent views \\
-Kungfu Episode & agent action $\leftrightarrow$ real-world result &
-Sessions, logs, process exit, and human reconstruction of which facts,
-artifacts, receipts, and proof belong to one unit of work \\
-Release Passport & reviewed source/build $\leftrightarrow$ released artifact &
-Maintainer memory about what was promoted, which checks ran, which artifacts
-exist, and what users can verify \\
-\bottomrule
-\end{tabular}
-\caption{Three candidate primitives and the implicit boundaries they mediate.}
-\label{tab:cases}
-\end{table}
+\subsection{From fact cut to successor fact cut}
 
-\subsection{Xinfa Atlas: reality to shared understanding}
-
-A Xinfa Atlas is defined as the smallest portable, reproducible, and
-verifiable semantic closure compiled at a declared source and policy cut, from
-which equivalent human and agent views can be derived without reinterpreting
-the unbounded source corpus \cite{xinfaAtlas2026}. It binds scope, provenance,
-verification state, gaps, conflicts, routes, and deterministic identity while
-remaining a representation rather than source authority.
-
-The boundary pressure is cognitive. A repository may be readable to a
-maintainer because that person carries years of implicit context. New humans,
-agents, documentation sites, IDEs, and task runners otherwise reconstruct
-different project models. A context window or archive is too narrow as the
-primitive: it names a transport or one reader's selection. Atlas names the
-cut-bound closure from which bounded Human Views, Agent Task Charts, and GUI
-views can be derived under the same root \cite{xinfaProjections2026}.
-
-The deletion test is strong but not conclusive. Without Atlas, the system
-either repeats the full closure definition, elevates a storage pack into the
-user object, or allows each projection to become a separate fact source. The
-narrower alternative is retrieval over raw repositories. That alternative
-would falsify Atlas if it delivered equivalent provenance, portability,
-bounded cost, gap visibility, deterministic identity, and cross-reader parity
-without recreating Atlas semantics.
-
-As of the evidence cut used by this paper, Atlas identity and bounded
-projections are accepted and implemented in Kungfu's Xinfa subsystem. Adoption
-and measurable context-cost reduction remain open evaluation questions.
-
-\subsection{Kungfu Episode: action to consequence}
-
-A Kungfu Episode is a bounded causal unit of actual work whose facts,
-artifacts, dependencies, receipts, and verification roots can be inspected,
-sealed, exported, recovered, and used to support decisions
-\cite{kungfuEpisode2026}. The object is deliberately not a chat session,
-process, or bag of logs. Those coordinates end for technical reasons, while
-real responsibility may span runs and preserve useful partial work after a
-failure.
-
-The boundary pressure is causal and accountable. A successful tool call does
-not prove visibility, durability, projection, or completion. A process exit
-does not state which artifacts belong to the work. A trace can show calls
-without defining the authoritative unit that export, fsck, recovery, and later
-trust assessment should address. Episode collects those relations under one
-bounded lifecycle while keeping Claim distinct from Proof and Decision.
-
-The deletion test asks whether runtime consumers can still export, verify,
-recover, and reason about one unit of actual work without reconstructing it
-from sessions, logs, traces, and external files. A narrower event-group label
-would falsify the need for Episode if it supported the same causal closure,
-identity, lifecycle, receipts, and recovery semantics.
-
-Episode is the central product vocabulary and an accepted architectural
-object, but its implementation evidence is mixed. Core causal-segment work is
-active while some sealed identity, cross-provider equivalence, and bundle
-contracts remain proposed or partial. This paper therefore treats Episode as
-a strong, actively dogfooded candidate rather than a completed universal
-standard.
-
-\subsection{Buildchain Release Passport: build activity to released truth}
-
-Buildchain Release Passport is a durable release responsibility record for
-artifacts that users or agents depend on \cite{buildchainPassport2026}. Its
-first-read artifact, \texttt{buildchain.release.json}, binds reviewed source,
-release line and channel, exact tags, artifact hashes, checks, surface impact,
-package publication, residual evidence, and transaction state.
-
-The boundary pressure comes after CI says green. Build systems can compile,
-test, and upload while leaving the recipient unable to answer which reviewed
-state was released, what exact artifact was produced, which floating channel
-now points to it, or how to verify and recover the transaction. Historically a
-maintainer reconstructs this story from workflow pages, tags, package
-registries, and memory.
-
-The deletion test is whether an independent human or agent can reconstruct the
-same release responsibility record from ordinary provider state at comparable
-cost and without private maintainer context. The narrower alternative is a
-provenance attestation alone. That alternative is sufficient only if it also
-captures promotion, compatibility impact, package-set and channel state,
-residual risk, and recovery responsibility rather than artifact origin alone.
-
-This is the most mature case in the paper. Buildchain stable release
-\texttt{v2.12.7} publishes the passport and its supporting evidence as GitHub
-Release assets. Maturity in one ecosystem does not prove generality, but it
-does show that the object can bear real release operations rather than remain
-only a diagram.
-
-\subsection{Shared structure and bounded claim}
-
-The cases support a common pattern:
+Let $F_t$ be the declared fact cut available at time $t$. A participant forms
+a purpose-bound trust assessment $T_t$, decides whether to cooperate through
+$C_t$, and performs an action whose real occurrence is $E_{t,t+1}$. Evidence
+from that occurrence is reviewed and admitted into a successor fact cut:
 
 \begin{equation}
-\text{implicit coordination}
-\xrightarrow{\Delta P}
-\text{recurring boundary failure}
-\xrightarrow{X}
-\text{inspectable mediation}.
+F_t
+\xrightarrow{\mathrm{assessment}} T_t
+\xrightarrow{\mathrm{value,choice}} C_t
+\xrightarrow{\mathrm{action}} E_{t,t+1}
+\xrightarrow{\mathrm{review,admission}} F_{t+1}.
+\label{eq:recursive-kernel}
 \end{equation}
 
-They do not yet establish that the pattern is necessary for all primitives or
-that any case will reach historical significance. The evidence supports a
-candidate-generation method and three non-trivial implementation cases. Time,
-independent adoption, and adversarial deletion tests must carry the stronger
-claim.
+$E_{t,t+1}$ is not identical to its record, and its record does not
+automatically become accepted fact. The distinction prevents an actor, tool,
+or model from defining reality solely through its own report. Admission may
+accept, reject, qualify, or leave evidence unresolved. What matters is that
+the path remains inspectable enough for later correction.
+
+The kernel has three useful properties.
+
+\paragraph{Persistence.}
+Another participant can identify the prior cut, assessment, commitment, and
+result without recovering a private conversation.
+
+\paragraph{Correction.}
+New consequence can revise trust, expose a bad decision, or invalidate an
+object model while preserving what the earlier cut actually contained.
+
+\paragraph{Generation.}
+Cooperation does not terminate in agreement. It creates new actions,
+artifacts, failures, counterexamples, and commitments that expand the world
+available to later participants.
+
+Facts are therefore not merely the beginning of the chain. They are also the
+governed return point. Trust is not merely confidence. It is the bridge that
+makes a fact cut actionable. Cooperation is not merely social harmony. It is
+the generative transition through which the world can change.
+
+\subsection{Cross-session continuation}
+
+Return to the agent task from Section~\ref{sec:problem}. A strong continuation
+implements the loop as follows:
+
+\begin{enumerate}[leftmargin=*]
+  \item The ending session leaves authoritative source coordinates, changed
+        artifacts, check results, the unresolved failure, known omissions, and
+        responsibility boundaries. The transcript may be evidence, but is not
+        silently promoted into the whole fact world.
+  \item A fresh participant checks a bounded completion claim against those
+        facts. The result may be warning rather than pass because one failure
+        remains unresolved.
+  \item The participant sees the value of continuing, the allowed actions,
+        the blocked or approval-gated actions, and the party responsible for
+        the next decision.
+  \item The participant chooses a bounded continuation, performs it, and
+        leaves new source changes, observations, receipts, and verification
+        results.
+  \item Review admits those results into a successor cut without rewriting
+        the first session's evidence boundary.
+\end{enumerate}
+
+The session can disappear because it is not the identity of the work. The
+continuation does not require blind trust in the first agent, because trust is
+reconstructed from retained facts. The second participant does not merely
+obey a next-step prompt, because value and constraints are inspectable. The
+result becomes material for a third participant. Continuity is thus an outcome
+of the entire triad, not of storage alone.
+
+\subsection{Why this is a foundation for KFD}
+
+Every later KFD can introduce new objects, procedures, or domain profiles, but
+it must re-enter this kernel. A new object needs a stable fact identity. Claims
+about it need purpose-bound assessment. Its use with reasoning participants
+needs trusted value and visible constraint. Its action produces consequences
+that must return through review rather than self-certification.
+
+This dependency explains foundation without requiring the first paper to
+catalog every later KFD. The triad is a generative kernel, not a compressed
+table of contents.
