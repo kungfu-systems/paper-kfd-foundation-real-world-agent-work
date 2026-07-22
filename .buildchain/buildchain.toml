@@ -7,7 +7,7 @@ name = "paper-kfd-foundation-real-world-agent-work"
 [publication]
 kind = "paper"
 title = "Facts, Trust, and Cooperation: The KFD Foundation Triad"
-version = "0.1.0-alpha.7"
+version = "0.1.0-alpha.8"
 abstract = "A systems account of facts, trust, and cooperation as the minimal recursive foundation for persistent work across participants and time."
 authors = [ "Keren Dong" ]
 primary_artifact = "_build/kfd-foundation-model.pdf"
