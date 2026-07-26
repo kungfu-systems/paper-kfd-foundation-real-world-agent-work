@@ -19,7 +19,7 @@
 - `.github/workflows/paper-release.yml`: Buildchain-managed npm and GitHub
   release workflow for alpha and release channels.
 - `.github/workflows/verify.yml`: Buildchain configuration verification.
-- `.buildchain/contract-lock.json`: accepted Buildchain v2 contract lock.
+- `.buildchain/contract-lock.json`: accepted Buildchain v3 contract lock.
 - `package.json`: source repository package identity and license metadata; the
   published package contents are synthesized by Buildchain.
 
