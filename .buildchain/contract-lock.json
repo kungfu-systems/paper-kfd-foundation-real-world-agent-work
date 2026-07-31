@@ -2,19 +2,19 @@
   "schemaVersion": 1,
   "contract": "kungfu-buildchain-contract-lock",
   "buildchain": {
-    "ref": "v2-alpha",
-    "resolvedSha": "7458ddfc0f3651dffa8a947fdf4d139b761903e5",
+    "ref": "v3",
+    "resolvedSha": "f30bb2678cacbae947eb46411c13eda75e9e35b0",
     "contract": "kungfu-buildchain-runtime-contract-world",
-    "contractDigest": "sha256:1eb4a09877bfb2efea892d7125f0e3327f67e578f11fb6b10d044f4b6d34f987",
-    "compatibilityDigest": "sha256:cdf588422ec6b460bd6f631400efa6e361a045e052c8967d6c50fadd7aa4dd90",
-    "majorLine": "v2",
+    "contractDigest": "sha256:000dd17acb6a55f563392cd49d22a5c64ec178c80292b92e6630e58ca6d5aeee",
+    "compatibilityDigest": "sha256:61af7d0871220bc0909008bdc571905ad500cccf853e7841bc5d462a34b2d436",
+    "majorLine": "v3",
     "compatibilityPolicy": "major-compatible",
-    "acceptedAt": "2026-07-22T14:40:08.270Z",
+    "acceptedAt": "2026-07-31T16:03:39.814Z",
     "surfaces": [
       {
         "id": "reusable-build",
         "kind": "workflow",
-        "breakingDigest": "sha256:a6a35370d6b0d0f46e1b2712dcc01961fe53c2febde95409a27a485c10a36650"
+        "breakingDigest": "sha256:dfbedd543ae0c067982b5c8c02d98dd2f7f7df88752be97fb330da6b0ba30faa"
       },
       {
         "id": "channel-build-router",
@@ -24,7 +24,7 @@
       {
         "id": "release-candidate-promote",
         "kind": "workflow",
-        "breakingDigest": "sha256:1f476fb9a4854b362c4b24cef89a3c7675d7d63baf3bc828d7b8ae7d2787cead"
+        "breakingDigest": "sha256:acd401cfc46450115a3763fd4b679d85f185e8757ebd52510d6262e1533df4cf"
       },
       {
         "id": "advanced-release-candidate-promote",
@@ -34,12 +34,22 @@
       {
         "id": "web-surface",
         "kind": "workflow",
-        "breakingDigest": "sha256:da569f90374e878948e3d5160ed9929338ce0572473ca8ee54867b0fe1aaeace"
+        "breakingDigest": "sha256:27f0cb9c7d97288850d215be8696b323471c41fd1cdf3a2ff3ebf21f62541960"
+      },
+      {
+        "id": "auditable-demo",
+        "kind": "workflow",
+        "breakingDigest": "sha256:425f8d3d1ba205dd6fe35a20f1dc6dad7d7c563872283e3af79fea4d5c475692"
       },
       {
         "id": "promote-buildchain-ref-action",
         "kind": "action",
         "breakingDigest": "sha256:6147c0a8d5c36bfaa6021871574e1fc28192a3f1b8cfdae4d24ef3059ac1ebda"
+      },
+      {
+        "id": "macos-credential-island-action",
+        "kind": "action",
+        "breakingDigest": "sha256:61866985864205770c70cbe14c3c60f479512a32c0b007b5fd6d8d65132ff8be"
       },
       {
         "id": "report-buildchain-issue-action",
@@ -99,7 +109,7 @@
       {
         "id": "controller:build-lifecycle",
         "kind": "controller",
-        "breakingDigest": "sha256:e264a79f9f399038c2fcfd21e4168c68c2e1485ee5c651c02242a02b622ac2be"
+        "breakingDigest": "sha256:6b8d38e92b2c67b5bc83fae0a3fd95bfa47582fbc176e6cdeebe7630a57534cb"
       },
       {
         "id": "controller:build-channel-router",
