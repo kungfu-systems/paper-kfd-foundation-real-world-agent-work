@@ -2,15 +2,12 @@ name: Build
 
 on:
   workflow_dispatch:
-    inputs:
-      buildchain-ref:
-        description: "Temporary Buildchain runtime ref for trusted manual validation"
-        required: false
-        default: ""
   pull_request:
   push:
     branches:
       - "dev/**"
+      - "alpha/**"
+      - "release/**"
 
 permissions:
   contents: read
@@ -18,16 +15,10 @@ permissions:
 
 jobs:
   publication:
-    uses: kungfu-systems/buildchain/.github/workflows/publication-artifact.yml@v2-alpha
+    uses: kungfu-systems/buildchain/.github/workflows/publication-artifact.yml@f30bb2678cacbae947eb46411c13eda75e9e35b0
     with:
-      buildchain-ref: ${{ inputs.buildchain-ref || '' }}
+      buildchain-ref: f30bb2678cacbae947eb46411c13eda75e9e35b0
       buildchain-contract-lock-path: .buildchain/contract-lock.json
       toolchain-type: config
       verify-command: make check
-      artifact-name: paper-kfd-foundation-real-world-agent-work
-      artifact-paths: |
-        _build/kfd-foundation-model.pdf
-        .buildchain/publication/publication-artifact.json
-        .buildchain/publication/publication-artifact-passport.json
-        .buildchain/publication/publication-registry.json
-        .buildchain/publication/source.tar.gz
+      artifact-name: "paper-kfd-foundation-real-world-agent-work"
