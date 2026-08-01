@@ -9,42 +9,42 @@
   },
   "runtime": {
     "repository": "kungfu-systems/buildchain",
-    "version": "3.0.4-alpha.9",
-    "ref": "1b071346efbae3886ec463298d50e02ede31f600",
-    "resolvedSha": "1b071346efbae3886ec463298d50e02ede31f600"
+    "version": "3.0.4-alpha.10",
+    "ref": "c79b12aa311d9d39ff9c42164bf1b450df2e6e9b",
+    "resolvedSha": "c79b12aa311d9d39ff9c42164bf1b450df2e6e9b"
   },
   "workflows": {
     "build": {
       "path": ".github/workflows/build.yml",
-      "sourceDigest": "sha256:134412ab8466a43a2c6736bb9be50f4525f67971f122c01e2b44124d2ea62512",
+      "sourceDigest": "sha256:603e1c6c84ad96a48840d839355ab02fda43b7ed619c2cc5b6526bcd28a277c9",
       "reusablePath": ".github/workflows/publication-artifact.yml",
-      "reusableRef": "1b071346efbae3886ec463298d50e02ede31f600"
+      "reusableRef": "c79b12aa311d9d39ff9c42164bf1b450df2e6e9b"
     },
     "verify": {
       "path": ".github/workflows/verify.yml",
-      "sourceDigest": "sha256:6b540c810b9af4eb109cdc054a83339f407e9eb2cc1a8c9c0c0f0100c004c8fc",
+      "sourceDigest": "sha256:f2d840991d77659188832589a455c1dba7d06e52a4fd57a06ee54c3a8a33065d",
       "reusablePath": ".github/workflows/check.yml",
-      "reusableRef": "1b071346efbae3886ec463298d50e02ede31f600"
+      "reusableRef": "c79b12aa311d9d39ff9c42164bf1b450df2e6e9b"
     },
     "release": {
       "path": ".github/workflows/paper-release.yml",
-      "sourceDigest": "sha256:44ead364892bdcdf31679dd295c2a1fd3576689347ed586e6b131e8916016b26",
+      "sourceDigest": "sha256:d0cb801274faf874f1804837adbd086fb740ec60bfff80123a2a1d217957c670",
       "reusablePath": ".github/workflows/paper-release-sealed.yml",
-      "reusableRef": "1b071346efbae3886ec463298d50e02ede31f600"
+      "reusableRef": "c79b12aa311d9d39ff9c42164bf1b450df2e6e9b"
     }
   },
   "agentEntry": {
     "contract": "kungfu-buildchain-paper-agent-entry",
     "policyPath": ".buildchain/paper/agent-entry.json",
-    "policyDigest": "sha256:62a07a75e4b82fdaff99dc6b3af21ef1cb95300e5f1c9356ce36edb783472fc8",
+    "policyDigest": "sha256:eac4594074b55431c535994c07ecf1f206fc3c11c9f569056c69dcd46a887eb6",
     "instructionsPath": "AGENTS.md",
     "instructionsDigest": "sha256:4607f1b43da5d96aa9a7d6c9c7a569008086d6e8d74b27d5a487cecc73ea9afa"
   },
   "admission": {
     "contractLockPath": ".buildchain/contract-lock.json",
-    "contractLockDigest": "sha256:0f707e6edfdc72fc7b6524490de6308881a00522dde1946dc3224907395975aa",
-    "acceptedRef": "1b071346efbae3886ec463298d50e02ede31f600",
-    "acceptedSha": "1b071346efbae3886ec463298d50e02ede31f600"
+    "contractLockDigest": "sha256:83d29c184c747d23db899002edf20adf8accac6d701c4490b54b6791f66e6165",
+    "acceptedRef": "c79b12aa311d9d39ff9c42164bf1b450df2e6e9b",
+    "acceptedSha": "c79b12aa311d9d39ff9c42164bf1b450df2e6e9b"
   },
   "trustedPublisher": {
     "type": "github",
@@ -82,5 +82,5 @@
     },
     "policyDigest": "sha256:42aafcd084e0de8f569176df4397120e226b4f619b0ff3db804bbb528e1313af"
   },
-  "authorityDigest": "sha256:13e4e6ca8890422773e548000294b1c4f0986d01befaca87102bb9bcd3e7861e"
+  "authorityDigest": "sha256:4d79f41a21f20586ed2b1dcc100b08a70b98031b0d384558b63e179f2f2dfbe4"
 }
