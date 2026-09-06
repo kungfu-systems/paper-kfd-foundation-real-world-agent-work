@@ -2,26 +2,40 @@
   "schemaVersion": 1,
   "contract": "kungfu-buildchain-contract-lock",
   "buildchain": {
-    "ref": "v4",
-    "resolvedSha": "9f43b6d1eaf388b9347b80c492e5b8415016816c",
+    "ref": "v4-alpha",
+    "resolvedSha": "2d8df76eaf70237519bd34170b0473c2ef3f4f4f",
     "contract": "kungfu-buildchain-runtime-contract-world",
-    "contractDigest": "sha256:f37a3a710cc130919c5fcbdd73b37c21762b8a91c5351028d4873baf69e6629e",
-    "compatibilityDigest": "sha256:7234ed200c568b1fea0e469de61ec7a67da48ede0af6290fb49b93a9e62e0b65",
+    "contractDigest": "sha256:f069247af1f1e2980446da04b3274d28a341a0f3b9ed844d8e5619f908d26910",
+    "compatibilityDigest": "sha256:20411029d83211dff426fb6535a608902129844a5ccb4788db77d3f81becb839",
+    "compatibilityFactRegistryRoot": "sha256:232fd556a2372b29db586bbc2acbdfce6464a68c93902797ff527f75f7816c42",
+    "compatibilityFactCutRoot": "sha256:f61b975d4a96c921cc4bd37fb3ed9a0596b47004fe34dc7219979d697e3707f9",
+    "compatibilityProofRegistryRoot": "sha256:b7194b811e4d3af2df4390bc4d1731e16a86215bd64ee18cb630dd5492f4fb63",
     "majorLine": "v4",
     "compatibilityPolicy": "major-compatible",
-    "acceptedAt": "2026-08-13T09:13:17.000Z",
+    "acceptedAt": "2026-09-06T13:21:07.000Z",
     "surfaces": [
       {
         "id": "reusable-build",
         "kind": "workflow",
         "breakingDigest": "sha256:dfbedd543ae0c067982b5c8c02d98dd2f7f7df88752be97fb330da6b0ba30faa",
-        "compatibilityProofRoots": [],
-        "compatibilityFactRoots": []
+        "compatibilityProofRoots": [
+          "sha256:b99176f414752ffb276f4add6183aa81eeb480598368ca4f57804f024212d0f5"
+        ],
+        "compatibilityFactRoots": [
+          "sha256:7c85c77b8282d123924b89b4f5b239b58b7b1383af91b9006425d9269a2c6ce5"
+        ]
       },
       {
         "id": "channel-build-router",
         "kind": "workflow",
         "breakingDigest": "sha256:c4597dfa89e1a58f1023905092b849644f5c080abf150aeba9c7e1cd5ed43962",
+        "compatibilityProofRoots": [],
+        "compatibilityFactRoots": []
+      },
+      {
+        "id": "dev-pr-auto-merge",
+        "kind": "workflow",
+        "breakingDigest": "sha256:21b65d0746d2e8b3e8a7df4c6fab295a85c8fd42cc405ec3bc5df5cdab0421f0",
         "compatibilityProofRoots": [],
         "compatibilityFactRoots": []
       },
@@ -36,15 +50,23 @@
         "id": "advanced-release-candidate-promote",
         "kind": "workflow",
         "breakingDigest": "sha256:9db8dd07152855d03ff30f9c571438593c689d3e8139fa45431d000f548242f5",
-        "compatibilityProofRoots": [],
-        "compatibilityFactRoots": []
+        "compatibilityProofRoots": [
+          "sha256:36c85ba487be1528e85776d2bc5f766a971d42ac238aec30071945f7d60d9fc5"
+        ],
+        "compatibilityFactRoots": [
+          "sha256:5664da2363bed0b45497215b60763c3be627e568eb3182af5891c23ae3875fbe"
+        ]
       },
       {
         "id": "web-surface",
         "kind": "workflow",
         "breakingDigest": "sha256:27f0cb9c7d97288850d215be8696b323471c41fd1cdf3a2ff3ebf21f62541960",
-        "compatibilityProofRoots": [],
-        "compatibilityFactRoots": []
+        "compatibilityProofRoots": [
+          "sha256:3ba66a1e8f8d00ddd45f3f448bcccb15469cbd31f5765d36f61e4cfe7fd0dd41"
+        ],
+        "compatibilityFactRoots": [
+          "sha256:bba5690e6c535b54623d31b3260e59381bdb50161d7bff33b8e42b8b6dd3135a"
+        ]
       },
       {
         "id": "auditable-demo",
@@ -61,11 +83,22 @@
         "compatibilityFactRoots": []
       },
       {
+        "id": "v4-release-candidate-promote-action",
+        "kind": "action",
+        "breakingDigest": "sha256:9229eb3a000fb408feb6b8793c209c77afbf9327026467d68954470e22e4f8f4",
+        "compatibilityProofRoots": [],
+        "compatibilityFactRoots": []
+      },
+      {
         "id": "promote-buildchain-ref-action",
         "kind": "action",
         "breakingDigest": "sha256:6147c0a8d5c36bfaa6021871574e1fc28192a3f1b8cfdae4d24ef3059ac1ebda",
-        "compatibilityProofRoots": [],
-        "compatibilityFactRoots": []
+        "compatibilityProofRoots": [
+          "sha256:e6f93f44a6613a9d6de776ebe8f29b1779b0cd18a24bdf126ec6c1a07770fa75"
+        ],
+        "compatibilityFactRoots": [
+          "sha256:50e5b6e644493ac00d5b1d83a0ec6009f9faaae1bee15e88ee8386c9ec8a775d"
+        ]
       },
       {
         "id": "macos-credential-island-action",
@@ -155,15 +188,25 @@
         "id": "controller:build-lifecycle",
         "kind": "controller",
         "breakingDigest": "sha256:6b8d38e92b2c67b5bc83fae0a3fd95bfa47582fbc176e6cdeebe7630a57534cb",
-        "compatibilityProofRoots": [],
-        "compatibilityFactRoots": []
+        "compatibilityProofRoots": [
+          "sha256:3bd1c54198b78a462d2005ac66c139ad4d6f1962925c8f0971b4d0a222f1a7c5",
+          "sha256:9024634cef43a9d695fa224d26be9aeb6370d3c981b003ece3b659dde8e73713"
+        ],
+        "compatibilityFactRoots": [
+          "sha256:c803aa7787c92e9ac71e0f52b6d2ec0cc76e8bc0e55f192affa9546286899ce9",
+          "sha256:b45ecad5988d358bc4604f28db0faad793a02d8ee8592cc1f4323365e951c6f0"
+        ]
       },
       {
         "id": "controller:build-channel-router",
         "kind": "controller",
         "breakingDigest": "sha256:30549aa26cd1e1dd81f10fe3529d3c6e3f8438a6efa0100c47ebae4d2f3d71df",
-        "compatibilityProofRoots": [],
-        "compatibilityFactRoots": []
+        "compatibilityProofRoots": [
+          "sha256:36d2e188f43385d6191116393aa81ea025ccf61e21a1c5eae1d56be92a203b31"
+        ],
+        "compatibilityFactRoots": [
+          "sha256:47c1d78adba0d75ac74409d85ad6cf1188d10d25165d2d561118cf76e9ccb701"
+        ]
       },
       {
         "id": "controller:shifu-gate-profile-envelope",
@@ -204,8 +247,12 @@
         "id": "controller:release-propagation",
         "kind": "controller",
         "breakingDigest": "sha256:b873ceb65618972bea615afcb9c616c138ce834b3246ec7237ef87c1618d68bd",
-        "compatibilityProofRoots": [],
-        "compatibilityFactRoots": []
+        "compatibilityProofRoots": [
+          "sha256:8b98ff903d3abd8d9a9b6a0b250efd8fdf6fd5d4127aa4d0d0c4a5b3db87f353"
+        ],
+        "compatibilityFactRoots": [
+          "sha256:f6e89a46bb73e93583477eeb3bc3a8bd1f36bdafd040777fb3a999460191b360"
+        ]
       },
       {
         "id": "controller:binary-distribution",
